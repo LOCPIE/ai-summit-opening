@@ -862,7 +862,7 @@ body {
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 3vh 4vw 4.5vh !important;
+  padding: 1.5vh 3.5vw 2vh !important;
   width: 100%;
   overflow: hidden !important;
 }
@@ -875,7 +875,7 @@ body {
   width: 100%;
   max-width: 1420px;
   height: 100%;
-  max-height: 90vh;
+  max-height: 96vh;
 }
 
 /* Agenda Cards Container */
@@ -2658,7 +2658,7 @@ body {
 .slides-viewport.ratio-10-4 .slide.slide-agenda,
 .slides-viewport.ratio-12-5 .slide.slide-agenda,
 .slides-viewport.ratio-21-9 .slide.slide-agenda {
-  padding: 1.5vh 4vw 4.2vh !important;
+  padding: 1.2vh 3.5vw 1.8vh !important;
 }
 
 .slides-viewport.ratio-9-3 .agenda-container-card,
@@ -2667,8 +2667,8 @@ body {
 .slides-viewport.ratio-12-5 .agenda-container-card,
 .slides-viewport.ratio-21-9 .agenda-container-card {
   max-width: 1650px;
-  max-height: 78vh;
-  gap: 7px;
+  max-height: 94vh;
+  gap: 10px;
 }
 
 .slides-viewport.ratio-9-3 .agenda-block-header,
