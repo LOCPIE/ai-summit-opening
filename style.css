@@ -442,7 +442,6 @@ body {
   border-radius: 0 !important;
   box-shadow: none !important;
   border: none !important;
-  position: relative;
 }
 
 .journey-ambient-glow {
@@ -478,7 +477,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 1240px;
+  max-width: 1440px;
   position: relative;
   z-index: 2;
   margin: auto;
