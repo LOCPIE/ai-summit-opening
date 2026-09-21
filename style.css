@@ -855,27 +855,73 @@ body {
 
 
 /* =========================================
-   SLIDE 5: KEYNOTES AGENDA ACCORDION
+   SLIDE 5: KEYNOTES AGENDA ACCORDION (OPTIMIZED UI/UX)
    ========================================= */
 .slide.slide-agenda {
   display: flex !important;
+  flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 2.5vh 4vw 5vh !important;
+  padding: 3vh 4vw 4.5vh !important;
   width: 100%;
+  overflow: hidden !important;
 }
 
-.agenda-container-card {
-  width: 100%;
-  max-width: 1320px;
+.agenda-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 16px; /* Tăng khoảng cách giữa các ô Keynote cho thoáng và dễ nhìn */
-  max-height: 88vh;
+  align-items: center;
+  width: 100%;
+  max-width: 1380px;
+  height: 100%;
+  max-height: 86vh;
+}
+
+/* Slide Header */
+.agenda-top-header {
+  text-align: center;
+  margin-bottom: 2.2vh;
+}
+
+.agenda-section-title {
+  font-size: clamp(2.2rem, 3.2vw, 3.4rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.agenda-title-bar {
+  width: 72px;
+  height: 3.5px;
+  background: linear-gradient(90deg, #38bdf8, #60a5fa);
+  margin: 10px auto 8px;
+  border-radius: 2px;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.7);
+}
+
+.agenda-section-desc {
+  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+  color: #94a3b8;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+/* Agenda Cards Container */
+.agenda-container-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   overflow-y: auto;
-  padding: 8px 12px;
+  padding: 4px 10px 10px;
   scrollbar-width: thin;
   scrollbar-color: rgba(56, 189, 248, 0.35) transparent;
+  flex: 1;
 }
 
 .agenda-container-card::-webkit-scrollbar {
@@ -887,28 +933,46 @@ body {
   border-radius: 4px;
 }
 
-/* Individual Keynote Block - Sleek Floating Card */
+/* Individual Keynote Block - High-Contrast Floating Glass Card */
 .agenda-block {
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: linear-gradient(135deg, rgba(20, 36, 85, 0.78) 0%, rgba(11, 20, 56, 0.84) 100%);
+  border-radius: 16px;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, rgba(16, 32, 78, 0.82) 0%, rgba(9, 18, 50, 0.90) 100%);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   overflow: hidden;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
 }
 
 .agenda-block:hover {
-  border-color: rgba(56, 189, 248, 0.55);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.42), 0 0 24px rgba(56, 189, 248, 0.2);
   transform: translateY(-2px);
 }
 
-.agenda-block.expanded {
-  border-color: rgba(56, 189, 248, 0.75);
-  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.48), 0 0 30px rgba(56, 189, 248, 0.28);
-  transform: translateY(0);
+/* Color Accent Variations per Keynote Block */
+.block-keynote-1:hover, .block-keynote-1.expanded {
+  border-color: rgba(56, 189, 248, 0.7);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 24px rgba(56, 189, 248, 0.22);
+}
+
+.block-keynote-2:hover, .block-keynote-2.expanded {
+  border-color: rgba(96, 165, 250, 0.7);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 24px rgba(96, 165, 250, 0.22);
+}
+
+.block-keynote-3:hover, .block-keynote-3.expanded {
+  border-color: rgba(250, 204, 21, 0.65);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 24px rgba(250, 204, 21, 0.22);
+}
+
+.block-keynote-4:hover, .block-keynote-4.expanded {
+  border-color: rgba(167, 139, 250, 0.7);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 24px rgba(167, 139, 250, 0.22);
+}
+
+.block-keynote-5:hover, .block-keynote-5.expanded {
+  border-color: rgba(52, 211, 153, 0.7);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 24px rgba(52, 211, 153, 0.22);
 }
 
 /* Block Header */
@@ -916,21 +980,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 28px;
-  background: linear-gradient(90deg, rgba(38, 70, 140, 0.92) 0%, rgba(25, 48, 105, 0.9) 100%);
+  padding: 14px 26px;
+  background: linear-gradient(90deg, rgba(30, 56, 120, 0.78) 0%, rgba(18, 38, 90, 0.72) 100%);
   cursor: pointer;
   user-select: none;
-  transition: background 0.25s ease;
+  transition: background 0.2s ease;
 }
 
 .agenda-block:hover .agenda-block-header {
-  background: linear-gradient(90deg, rgba(46, 85, 168, 0.96) 0%, rgba(32, 62, 130, 0.95) 100%);
+  background: linear-gradient(90deg, rgba(38, 70, 148, 0.88) 0%, rgba(24, 48, 112, 0.82) 100%);
 }
 
 .agenda-block.expanded .agenda-block-header {
-  background: linear-gradient(90deg, rgba(46, 85, 168, 1) 0%, rgba(28, 54, 118, 0.98) 100%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 15px 28px;
+  background: linear-gradient(90deg, rgba(38, 70, 148, 0.95) 0%, rgba(20, 42, 102, 0.92) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px 26px;
 }
 
 .agenda-header-left {
@@ -942,59 +1006,108 @@ body {
 .agenda-title-row {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
-/* Tiêu đề Keynote chính */
+/* Keynote Pills (Pill Badges) */
+.agenda-keynote-pill {
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.pill-cyan {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.18);
+  border: 1px solid rgba(56, 189, 248, 0.55);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+}
+
+.pill-blue {
+  color: #93c5fd;
+  background: rgba(96, 165, 250, 0.18);
+  border: 1px solid rgba(96, 165, 250, 0.55);
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.2);
+}
+
+.pill-gold {
+  color: #fde047;
+  background: rgba(250, 204, 21, 0.18);
+  border: 1px solid rgba(250, 204, 21, 0.55);
+  box-shadow: 0 0 10px rgba(250, 204, 21, 0.2);
+}
+
+.pill-purple {
+  color: #c4b5fd;
+  background: rgba(167, 139, 250, 0.18);
+  border: 1px solid rgba(167, 139, 250, 0.55);
+  box-shadow: 0 0 10px rgba(167, 139, 250, 0.2);
+}
+
+.pill-emerald {
+  color: #6ee7b7;
+  background: rgba(52, 211, 153, 0.18);
+  border: 1px solid rgba(52, 211, 153, 0.55);
+  box-shadow: 0 0 10px rgba(52, 211, 153, 0.2);
+}
+
+/* Main Titles */
 .agenda-main-title {
-  font-size: clamp(1.48rem, 2.05vw, 1.95rem);
+  font-size: clamp(1.35rem, 1.85vw, 1.75rem);
   font-weight: 800;
   color: #ffffff;
   letter-spacing: -0.01em;
   line-height: 1.22;
+  margin: 0;
 }
 
-/* Huy hiệu Keynote Pill */
-.agenda-keynote-pill {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.18);
-  border: 1px solid rgba(56, 189, 248, 0.5);
-  padding: 3px 12px;
-  border-radius: 20px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-/* Mô tả Keynote */
+/* Descriptions */
 .agenda-main-desc {
-  font-size: clamp(0.98rem, 1.2vw, 1.15rem);
+  font-size: clamp(0.92rem, 1.1vw, 1.05rem);
   color: #cbd5e1;
   font-weight: 400;
   line-height: 1.35;
+  margin: 0;
 }
 
+/* Header Right Area */
 .agenda-header-right {
   display: flex;
   align-items: center;
   gap: 14px;
 }
 
+.agenda-badge-count {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 4px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
 .agenda-chevron-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   pointer-events: none;
-  transition: transform 0.3s ease, background 0.2s, box-shadow 0.2s;
+  transition: transform 0.25s ease, background 0.2s, border-color 0.2s;
 }
 
 .agenda-chevron-icon {
@@ -1009,10 +1122,9 @@ body {
   background: rgba(56, 189, 248, 0.25);
   border-color: rgba(56, 189, 248, 0.6);
   color: #38bdf8;
-  box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
 }
 
-/* Smooth Accordion Body (CSS Grid 0fr -> 1fr) */
+/* Accordion Body */
 .agenda-block-body-wrapper {
   display: grid;
   grid-template-rows: 0fr;
@@ -1025,93 +1137,186 @@ body {
 
 .agenda-block-body {
   overflow: hidden;
-  background: rgba(10, 18, 48, 0.96);
-  padding: 0 28px;
+  background: rgba(8, 16, 44, 0.95);
+  padding: 0 24px;
   display: flex;
   flex-direction: column;
+  gap: 8px;
   transition: padding 0.35s ease;
 }
 
 .agenda-block.expanded .agenda-block-body {
-  padding: 10px 28px 14px;
+  padding: 12px 24px 16px;
 }
 
 /* Individual Sub-row */
 .agenda-subrow {
   display: flex;
   align-items: center;
-  padding: 10px 14px;
-  margin: 4px 0;
+  padding: 10px 16px;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
   cursor: pointer;
   transition: all 0.2s ease;
+  gap: 14px;
 }
 
 .agenda-subrow:hover {
   background: rgba(56, 189, 248, 0.14);
-  border-color: rgba(56, 189, 248, 0.4);
-  transform: translateX(6px);
+  border-color: rgba(56, 189, 248, 0.45);
+  transform: translateX(4px);
 }
 
-/* Số thứ tự subrow */
+/* Subrow Numbers */
 .subrow-num {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 44px;
+  min-width: 40px;
   height: 28px;
   padding: 0 8px;
   border-radius: 8px;
-  border: 1px solid rgba(56, 189, 248, 0.45);
-  background: rgba(56, 189, 248, 0.14);
-  color: #38bdf8;
-  font-size: 0.92rem;
-  font-weight: 700;
-  margin-right: 14px;
+  font-size: 0.9rem;
+  font-weight: 800;
   letter-spacing: 0.02em;
 }
 
-/* Chữ chủ đề con */
+.num-cyan {
+  background: rgba(56, 189, 248, 0.18);
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  color: #38bdf8;
+}
+
+.num-blue {
+  background: rgba(96, 165, 250, 0.18);
+  border: 1px solid rgba(96, 165, 250, 0.5);
+  color: #93c5fd;
+}
+
+.num-gold {
+  background: rgba(250, 204, 21, 0.18);
+  border: 1px solid rgba(250, 204, 21, 0.5);
+  color: #fde047;
+}
+
+.num-purple {
+  background: rgba(167, 139, 250, 0.18);
+  border: 1px solid rgba(167, 139, 250, 0.5);
+  color: #c4b5fd;
+}
+
+.num-emerald {
+  background: rgba(52, 211, 153, 0.18);
+  border: 1px solid rgba(52, 211, 153, 0.5);
+  color: #6ee7b7;
+}
+
+/* Subrow Topic */
 .subrow-topic {
-  font-size: clamp(1.05rem, 1.35vw, 1.22rem);
+  font-size: clamp(1.02rem, 1.3vw, 1.2rem);
   font-weight: 700;
   color: #ffffff;
+  letter-spacing: -0.01em;
 }
 
-.subrow-sep {
-  color: #64748b;
-  margin: 0 10px;
-  font-weight: 400;
-  font-size: 1.1rem;
-}
-
-/* Tên diễn giả con */
-.subrow-speaker {
-  font-size: clamp(1rem, 1.3vw, 1.18rem);
+/* Speaker Chip */
+.subrow-speaker-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 12px;
+  border-radius: 9999px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #bae6fd;
+  font-size: clamp(0.88rem, 1.05vw, 1.0rem);
   font-weight: 600;
-  color: #7dd3fc;
+  white-space: nowrap;
 }
 
+.chip-gold {
+  background: rgba(250, 204, 21, 0.12);
+  border-color: rgba(250, 204, 21, 0.35);
+  color: #fef08a;
+}
+
+.chip-purple {
+  background: rgba(167, 139, 250, 0.12);
+  border-color: rgba(167, 139, 250, 0.35);
+  color: #ddd6fe;
+}
+
+.chip-emerald {
+  background: rgba(52, 211, 153, 0.12);
+  border-color: rgba(52, 211, 153, 0.35);
+  color: #a7f3d0;
+}
+
+/* Aside & Action Tag */
 .subrow-aside {
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: rgba(255, 255, 255, 0.45);
-  font-size: 0.9rem;
+  gap: 12px;
 }
 
-.subrow-play-icon {
-  opacity: 0.6;
-  transition: opacity 0.2s, transform 0.2s;
+.subrow-time {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  font-weight: 500;
 }
 
-.agenda-subrow:hover .subrow-play-icon {
-  opacity: 1;
-  transform: scale(1.2);
+.subrow-action-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.84rem;
+  font-weight: 700;
   color: #38bdf8;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  opacity: 0.85;
+  transition: all 0.2s ease;
+}
+
+.agenda-subrow:hover .subrow-action-tag {
+  opacity: 1;
+  background: #38bdf8;
+  color: #0c1838;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+  transform: translateX(2px);
+}
+
+/* Multi-ratio adaptations for Slide 5 */
+.slides-viewport.ratio-9-3 .agenda-wrapper,
+.slides-viewport.ratio-9-45 .agenda-wrapper,
+.slides-viewport.ratio-12-4 .agenda-wrapper,
+.slides-viewport.ratio-10-4 .agenda-wrapper {
+  max-width: 1540px;
+}
+
+.slides-viewport.ratio-9-3 .agenda-top-header,
+.slides-viewport.ratio-9-45 .agenda-top-header,
+.slides-viewport.ratio-12-4 .agenda-top-header,
+.slides-viewport.ratio-10-4 .agenda-top-header {
+  margin-bottom: 1.2vh;
+}
+
+.slides-viewport.ratio-9-3 .agenda-block-header,
+.slides-viewport.ratio-9-45 .agenda-block-header,
+.slides-viewport.ratio-12-4 .agenda-block-header,
+.slides-viewport.ratio-10-4 .agenda-block-header {
+  padding: 10px 22px;
+}
+
+.slides-viewport.ratio-9-3 .agenda-container-card,
+.slides-viewport.ratio-9-45 .agenda-container-card,
+.slides-viewport.ratio-12-4 .agenda-container-card,
+.slides-viewport.ratio-10-4 .agenda-container-card {
+  gap: 8px;
 }
 
 /* =========================================

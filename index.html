@@ -246,193 +246,225 @@
         </div>
       </section>
 
-      <!-- SLIDE 5: KEYNOTES AGENDA (ACCORDION FULL VIEW) -->
+      <!-- SLIDE 5: KEYNOTES AGENDA (TỐI ƯU GIAO DIỆN HIỂN THỊ DỄ NHÌN DỄ ĐỌC) -->
       <section class="slide slide-agenda" data-slide-index="5" data-title="Keynotes Agenda">
-        <div class="agenda-container-card">
-
-          <!-- KEYNOTE 01 -->
-          <div class="agenda-block" id="agenda-sec-1">
-            <div class="agenda-block-header" onclick="toggleAgenda(1)">
-              <div class="agenda-header-left">
-                <div class="agenda-title-row">
-                  <h2 class="agenda-main-title">Intelligent Architect</h2>
-                  <span class="agenda-keynote-pill">Keynote 01</span>
-                </div>
-                <p class="agenda-main-desc">Định hình kiến trúc AI cho vận hành doanh nghiệp</p>
-              </div>
-              <div class="agenda-header-right">
-                <button class="agenda-chevron-btn" aria-label="Mở rộng / Thu gọn Keynote 01">
-                  <svg class="agenda-chevron-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-                </button>
-              </div>
-            </div>
-            <div class="agenda-block-body-wrapper">
-              <div class="agenda-block-body">
-                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(7)">
-                  <span class="subrow-num">1</span>
-                  <span class="subrow-topic">Intelligent Architecture</span>
-                  <span class="subrow-sep">-</span>
-                  <span class="subrow-speaker">Ông Phạm Kim Hùng</span>
-                  <div class="subrow-aside">
-                    <span class="subrow-time">20 phút</span>
-                    <svg class="subrow-play-icon" viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="agenda-wrapper">
+          
+          <!-- Slide Title Header -->
+          <div class="agenda-top-header animate-in delay-1">
+            <h2 class="agenda-section-title">CHƯƠNG TRÌNH KEYNOTE</h2>
+            <div class="agenda-title-bar"></div>
+            <p class="agenda-section-desc">Tổng quan các phiên tham luận &amp; Chuyển giao giải pháp công nghệ</p>
           </div>
 
-          <!-- KEYNOTE 02 -->
-          <div class="agenda-block" id="agenda-sec-2">
-            <div class="agenda-block-header" onclick="toggleAgenda(2)">
-              <div class="agenda-header-left">
-                <div class="agenda-title-row">
-                  <h2 class="agenda-main-title">The New Base</h2>
-                  <span class="agenda-keynote-pill">KEYNOTE 02</span>
-                </div>
-                <p class="agenda-main-desc">Khám phá các sản phẩm mới của Base 2.0</p>
-              </div>
-              <div class="agenda-header-right">
-                <button class="agenda-chevron-btn" aria-label="Mở rộng / Thu gọn Keynote 02">
-                  <svg class="agenda-chevron-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-                </button>
-              </div>
-            </div>
-            <div class="agenda-block-body-wrapper">
-              <div class="agenda-block-body">
-                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(9)">
-                  <span class="subrow-num">2.1</span>
-                  <span class="subrow-topic">Sales &amp; Marketing OS</span>
-                  <span class="subrow-sep">-</span>
-                  <span class="subrow-speaker">Ông Trần Tuấn Anh Nghĩa + Ông Hoàng Thanh Nguyện</span>
-                  <div class="subrow-aside">
-                    <svg class="subrow-play-icon" viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
-                  </div>
-                </div>
-                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(10)">
-                  <span class="subrow-num">2.2</span>
-                  <span class="subrow-topic">People OS</span>
-                  <span class="subrow-sep">-</span>
-                  <span class="subrow-speaker">Ông Nguyễn Phi Hùng</span>
-                  <div class="subrow-aside">
-                    <svg class="subrow-play-icon" viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
-                  </div>
-                </div>
-                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(12)">
-                  <span class="subrow-num">2.3</span>
-                  <span class="subrow-topic">Work OS</span>
-                  <span class="subrow-sep">-</span>
-                  <span class="subrow-speaker">Ông Lê Bảo Ngọc - Ông Trần Tuấn Anh Nghĩa</span>
-                  <div class="subrow-aside">
-                    <svg class="subrow-play-icon" viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <!-- 5 Modern Floating Agenda Cards Container -->
+          <div class="agenda-container-card animate-in delay-2">
 
-          <!-- KEYNOTE 03 -->
-          <div class="agenda-block" id="agenda-sec-3">
-            <div class="agenda-block-header" onclick="toggleAgenda(3)">
-              <div class="agenda-header-left">
-                <div class="agenda-title-row">
-                  <h2 class="agenda-main-title">AI Device</h2>
-                  <span class="agenda-keynote-pill">Keynote 03</span>
+            <!-- KEYNOTE 01 -->
+            <div class="agenda-block block-keynote-1" id="agenda-sec-1">
+              <div class="agenda-block-header" onclick="toggleAgenda(1)">
+                <div class="agenda-header-left">
+                  <div class="agenda-title-row">
+                    <span class="agenda-keynote-pill pill-cyan">Keynote 01</span>
+                    <h3 class="agenda-main-title">Intelligent Architect</h3>
+                  </div>
+                  <p class="agenda-main-desc">Định hình kiến trúc AI cho vận hành doanh nghiệp</p>
                 </div>
-                <p class="agenda-main-desc">Hoàn thiện kiến trúc vận hành bằng thiết bị AI chuyên biệt</p>
+                <div class="agenda-header-right">
+                  <span class="agenda-badge-count">1 Phiên · 20'</span>
+                  <button class="agenda-chevron-btn" aria-label="Mở rộng / Thu gọn Keynote 01">
+                    <svg class="agenda-chevron-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                  </button>
+                </div>
               </div>
-              <div class="agenda-header-right">
-                <button class="agenda-chevron-btn" aria-label="Mở rộng / Thu gọn Keynote 03">
-                  <svg class="agenda-chevron-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-                </button>
-              </div>
-            </div>
-            <div class="agenda-block-body-wrapper">
-              <div class="agenda-block-body">
-                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(14)">
-                  <span class="subrow-num">3</span>
-                  <span class="subrow-topic">AI Device</span>
-                  <span class="subrow-sep">-</span>
-                  <span class="subrow-speaker">Bà Hà Việt Phương + Bà Nguyễn Kim Cúc</span>
-                  <div class="subrow-aside">
-                    <svg class="subrow-play-icon" viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+              <div class="agenda-block-body-wrapper">
+                <div class="agenda-block-body">
+                  <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(7)">
+                    <span class="subrow-num num-cyan">1</span>
+                    <span class="subrow-topic">Intelligent Architecture</span>
+                    <span class="subrow-speaker-chip">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                      <span>Ông Phạm Kim Hùng</span>
+                    </span>
+                    <div class="subrow-aside">
+                      <span class="subrow-time">20 phút</span>
+                      <span class="subrow-action-tag">Xem slide <svg viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg></span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- KEYNOTE 04 -->
-          <div class="agenda-block" id="agenda-sec-4">
-            <div class="agenda-block-header" onclick="toggleAgenda(4)">
-              <div class="agenda-header-left">
-                <div class="agenda-title-row">
-                  <h2 class="agenda-main-title">Agent Architecture &amp; AI Model Research Project</h2>
-                  <span class="agenda-keynote-pill">Keynote 04</span>
+            <!-- KEYNOTE 02 -->
+            <div class="agenda-block block-keynote-2" id="agenda-sec-2">
+              <div class="agenda-block-header" onclick="toggleAgenda(2)">
+                <div class="agenda-header-left">
+                  <div class="agenda-title-row">
+                    <span class="agenda-keynote-pill pill-blue">Keynote 02</span>
+                    <h3 class="agenda-main-title">The New Base</h3>
+                  </div>
+                  <p class="agenda-main-desc">Khám phá các sản phẩm mới của Base 2.0</p>
                 </div>
-                <p class="agenda-main-desc">Mô hình trí tuệ nhân tạo chuyên biệt &amp; Kiến trúc tác tử tự hành</p>
+                <div class="agenda-header-right">
+                  <span class="agenda-badge-count">3 Phiên sản phẩm</span>
+                  <button class="agenda-chevron-btn" aria-label="Mở rộng / Thu gọn Keynote 02">
+                    <svg class="agenda-chevron-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                  </button>
+                </div>
               </div>
-              <div class="agenda-header-right">
-                <button class="agenda-chevron-btn" aria-label="Mở rộng / Thu gọn Keynote 04">
-                  <svg class="agenda-chevron-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-                </button>
-              </div>
-            </div>
-            <div class="agenda-block-body-wrapper">
-              <div class="agenda-block-body">
-                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(17)">
-                  <span class="subrow-num">4.1</span>
-                  <span class="subrow-topic">AI Model Research Project</span>
-                  <span class="subrow-sep">-</span>
-                  <span class="subrow-speaker">TS. Triệu Hải Long + Ông Hoàng Thanh Nguyện</span>
-                  <div class="subrow-aside">
-                    <svg class="subrow-play-icon" viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+              <div class="agenda-block-body-wrapper">
+                <div class="agenda-block-body">
+                  <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(9)">
+                    <span class="subrow-num num-blue">2.1</span>
+                    <span class="subrow-topic">Sales &amp; Marketing OS</span>
+                    <span class="subrow-speaker-chip">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                      <span>Ông Trần Tuấn Anh Nghĩa + Ông Hoàng Thanh Nguyện</span>
+                    </span>
+                    <div class="subrow-aside">
+                      <span class="subrow-action-tag">Xem slide <svg viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg></span>
+                    </div>
+                  </div>
+                  <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(10)">
+                    <span class="subrow-num num-blue">2.2</span>
+                    <span class="subrow-topic">People OS</span>
+                    <span class="subrow-speaker-chip">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                      <span>Ông Nguyễn Phi Hùng</span>
+                    </span>
+                    <div class="subrow-aside">
+                      <span class="subrow-action-tag">Xem slide <svg viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg></span>
+                    </div>
+                  </div>
+                  <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(12)">
+                    <span class="subrow-num num-blue">2.3</span>
+                    <span class="subrow-topic">Work OS</span>
+                    <span class="subrow-speaker-chip">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                      <span>Ông Lê Bảo Ngọc + Ông Trần Tuấn Anh Nghĩa</span>
+                    </span>
+                    <div class="subrow-aside">
+                      <span class="subrow-action-tag">Xem slide <svg viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg></span>
+                    </div>
                   </div>
                 </div>
-                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(9)">
-                  <span class="subrow-num">4.2</span>
-                  <span class="subrow-topic">Agent Architecture</span>
-                  <span class="subrow-sep">-</span>
-                  <span class="subrow-speaker">Ông Phạm Kim Hùng + Ông Trần Tuấn Anh Nghĩa</span>
-                  <div class="subrow-aside">
-                    <svg class="subrow-play-icon" viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
-                  </div>
-                </div>
               </div>
             </div>
-          </div>
 
-          <!-- LAUNCHING TIMELINE & GO-LIVE -->
-          <div class="agenda-block" id="agenda-sec-5">
-            <div class="agenda-block-header" onclick="toggleAgenda(5)">
-              <div class="agenda-header-left">
-                <div class="agenda-title-row">
-                  <h2 class="agenda-main-title">Launching Timeline &amp; Go-live</h2>
-                  <span class="agenda-keynote-pill">Go-Live</span>
+            <!-- KEYNOTE 03 -->
+            <div class="agenda-block block-keynote-3" id="agenda-sec-3">
+              <div class="agenda-block-header" onclick="toggleAgenda(3)">
+                <div class="agenda-header-left">
+                  <div class="agenda-title-row">
+                    <span class="agenda-keynote-pill pill-gold">Keynote 03</span>
+                    <h3 class="agenda-main-title">AI Device</h3>
+                  </div>
+                  <p class="agenda-main-desc">Hoàn thiện kiến trúc vận hành bằng thiết bị AI chuyên biệt</p>
                 </div>
-                <p class="agenda-main-desc">Lộ trình triển khai &amp; Công bố chính thức các giải pháp AI</p>
+                <div class="agenda-header-right">
+                  <span class="agenda-badge-count">2 Diễn giả</span>
+                  <button class="agenda-chevron-btn" aria-label="Mở rộng / Thu gọn Keynote 03">
+                    <svg class="agenda-chevron-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                  </button>
+                </div>
               </div>
-              <div class="agenda-header-right">
-                <button class="agenda-chevron-btn" aria-label="Mở rộng / Thu gọn Launching Timeline">
-                  <svg class="agenda-chevron-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-                </button>
-              </div>
-            </div>
-            <div class="agenda-block-body-wrapper">
-              <div class="agenda-block-body">
-                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(1)">
-                  <span class="subrow-num">5</span>
-                  <span class="subrow-topic">Launching Timeline &amp; Go-live</span>
-                  <span class="subrow-sep">-</span>
-                  <span class="subrow-speaker">Bà Phùng Thị Hải Hà</span>
-                  <div class="subrow-aside">
-                    <svg class="subrow-play-icon" viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+              <div class="agenda-block-body-wrapper">
+                <div class="agenda-block-body">
+                  <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(14)">
+                    <span class="subrow-num num-gold">3</span>
+                    <span class="subrow-topic">AI Device</span>
+                    <span class="subrow-speaker-chip chip-gold">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                      <span>Bà Hà Việt Phương + Bà Nguyễn Kim Cúc</span>
+                    </span>
+                    <div class="subrow-aside">
+                      <span class="subrow-action-tag">Xem slide <svg viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg></span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
+            <!-- KEYNOTE 04 -->
+            <div class="agenda-block block-keynote-4" id="agenda-sec-4">
+              <div class="agenda-block-header" onclick="toggleAgenda(4)">
+                <div class="agenda-header-left">
+                  <div class="agenda-title-row">
+                    <span class="agenda-keynote-pill pill-purple">Keynote 04</span>
+                    <h3 class="agenda-main-title">Agent Architecture &amp; AI Model Research Project</h3>
+                  </div>
+                  <p class="agenda-main-desc">Mô hình trí tuệ nhân tạo chuyên biệt &amp; Kiến trúc tác tử tự hành</p>
+                </div>
+                <div class="agenda-header-right">
+                  <span class="agenda-badge-count">2 Chuyên đề</span>
+                  <button class="agenda-chevron-btn" aria-label="Mở rộng / Thu gọn Keynote 04">
+                    <svg class="agenda-chevron-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="agenda-block-body-wrapper">
+                <div class="agenda-block-body">
+                  <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(17)">
+                    <span class="subrow-num num-purple">4.1</span>
+                    <span class="subrow-topic">AI Model Research Project</span>
+                    <span class="subrow-speaker-chip chip-purple">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                      <span>TS. Triệu Hải Long + Ông Hoàng Thanh Nguyện</span>
+                    </span>
+                    <div class="subrow-aside">
+                      <span class="subrow-action-tag">Xem slide <svg viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg></span>
+                    </div>
+                  </div>
+                  <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(9)">
+                    <span class="subrow-num num-purple">4.2</span>
+                    <span class="subrow-topic">Agent Architecture</span>
+                    <span class="subrow-speaker-chip chip-purple">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                      <span>Ông Phạm Kim Hùng + Ông Trần Tuấn Anh Nghĩa</span>
+                    </span>
+                    <div class="subrow-aside">
+                      <span class="subrow-action-tag">Xem slide <svg viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- LAUNCHING TIMELINE & GO-LIVE -->
+            <div class="agenda-block block-keynote-5" id="agenda-sec-5">
+              <div class="agenda-block-header" onclick="toggleAgenda(5)">
+                <div class="agenda-header-left">
+                  <div class="agenda-title-row">
+                    <span class="agenda-keynote-pill pill-emerald">Go-Live</span>
+                    <h3 class="agenda-main-title">Launching Timeline &amp; Go-live</h3>
+                  </div>
+                  <p class="agenda-main-desc">Lộ trình triển khai &amp; Công bố chính thức các giải pháp AI</p>
+                </div>
+                <div class="agenda-header-right">
+                  <span class="agenda-badge-count">Khai mạc</span>
+                  <button class="agenda-chevron-btn" aria-label="Mở rộng / Thu gọn Launching Timeline">
+                    <svg class="agenda-chevron-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="agenda-block-body-wrapper">
+                <div class="agenda-block-body">
+                  <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(1)">
+                    <span class="subrow-num num-emerald">5</span>
+                    <span class="subrow-topic">Launching Timeline &amp; Go-live</span>
+                    <span class="subrow-speaker-chip chip-emerald">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                      <span>Bà Phùng Thị Hải Hà</span>
+                    </span>
+                    <div class="subrow-aside">
+                      <span class="subrow-action-tag">Xem slide <svg viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
