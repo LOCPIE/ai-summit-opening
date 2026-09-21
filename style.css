@@ -1193,7 +1193,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 3px 12px;
+  padding: 4px 14px;
   border-radius: 9999px;
   background: rgba(56, 189, 248, 0.12);
   border: 1px solid rgba(56, 189, 248, 0.35);
@@ -1201,6 +1201,7 @@ body {
   font-size: clamp(0.88rem, 1.05vw, 1.0rem);
   font-weight: 600;
   white-space: nowrap;
+  margin-left: auto;
 }
 
 .chip-gold {
