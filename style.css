@@ -862,7 +862,7 @@ body {
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 1.5vh 3.5vw 2vh !important;
+  padding: 1.2vh 3.5vw 1.5vh !important;
   width: 100%;
   overflow: hidden !important;
 }
@@ -884,9 +884,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 16px;
+  gap: 12px;
   overflow-y: auto;
-  padding: 10px 12px 14px;
+  padding: 4px 8px 8px;
   scrollbar-width: thin;
   scrollbar-color: rgba(56, 189, 248, 0.35) transparent;
   max-height: 100%;
@@ -903,13 +903,13 @@ body {
 
 /* Individual Keynote Block - High-Contrast Floating Glass Card */
 .agenda-block {
-  border-radius: 18px;
+  border-radius: 16px;
   border: 1.5px solid rgba(255, 255, 255, 0.14);
   background: linear-gradient(135deg, rgba(16, 32, 78, 0.84) 0%, rgba(9, 18, 50, 0.92) 100%);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   overflow: hidden;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.14);
   transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
 }
 
@@ -943,12 +943,12 @@ body {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 24px rgba(52, 211, 153, 0.22);
 }
 
-/* Block Header - Enlarged Height */
+/* Block Header - Reduced Top & Bottom Spacing */
 .agenda-block-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px 32px;
+  padding: 13px 28px;
   background: linear-gradient(90deg, rgba(30, 56, 120, 0.78) 0%, rgba(18, 38, 90, 0.72) 100%);
   cursor: pointer;
   user-select: none;
@@ -962,7 +962,7 @@ body {
 .agenda-block.expanded .agenda-block-header {
   background: linear-gradient(90deg, rgba(38, 70, 148, 0.95) 0%, rgba(20, 42, 102, 0.92) 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 22px 32px;
+  padding: 13px 28px;
 }
 
 .agenda-header-left {
@@ -2676,7 +2676,7 @@ body {
 .slides-viewport.ratio-10-4 .agenda-block-header,
 .slides-viewport.ratio-12-5 .agenda-block-header,
 .slides-viewport.ratio-21-9 .agenda-block-header {
-  padding: 16px 28px;
+  padding: 11px 24px;
 }
 
 .slides-viewport.ratio-9-3 .agenda-main-title,
