@@ -117,27 +117,90 @@
             <div class="journey-exact-underline"></div>
           </div>
 
-          <!-- 3-Column Grid: Headers span columns, 3 cards have equal 1fr width & gap -->
-          <div class="journey-grid-layout">
+          <!-- Journey Connect Line & Stage Badges Container -->
+          <div class="journey-line-track-wrapper">
             
-            <!-- Header Hanoi (Spans col 1 & 2) -->
-            <div class="journey-header-item header-hanoi">
-              <div class="journey-stage-group-header">
-                <span class="badge-dot"></span>
-                <span>CHẶNG HÀ NỘI · 17.09.2026</span>
+            <!-- Animated SVG Connecting Journey Line -->
+            <svg class="journey-flow-svg" viewBox="0 0 1000 48" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="laserGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="rgba(56, 189, 248, 0)" />
+                  <stop offset="40%" stop-color="rgba(56, 189, 248, 0.7)" />
+                  <stop offset="100%" stop-color="#38bdf8" />
+                </linearGradient>
+                <linearGradient id="laserGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#38bdf8" />
+                  <stop offset="50%" stop-color="#60a5fa" />
+                  <stop offset="100%" stop-color="#facc15" />
+                </linearGradient>
+                <filter id="laserGlowCyan" x="-20%" y="-40%" width="140%" height="180%">
+                  <feGaussianBlur stdDeviation="3" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+                <filter id="laserGlowGold" x="-20%" y="-40%" width="140%" height="180%">
+                  <feGaussianBlur stdDeviation="3.5" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <!-- Rail Track Background -->
+              <path class="flow-rail-bg" d="M 40,24 L 333,24 L 833,24" />
+
+              <!-- Step 1: Laser line running into Hanoi (40 -> 333) -->
+              <path class="laser-path laser-path-to-hanoi" d="M 40,24 L 333,24" stroke="url(#laserGrad1)" filter="url(#laserGlowCyan)" />
+
+              <!-- Step 2: Laser line running from Hanoi to HCM (333 -> 833) -->
+              <path class="laser-path laser-path-to-hcm" d="M 333,24 L 833,24" stroke="url(#laserGrad2)" filter="url(#laserGlowGold)" />
+
+              <!-- Traveling light comet / pulse (continuous loop after arrival) -->
+              <circle class="laser-pulse-comet" r="4.5" />
+
+              <!-- Node 1: Origin dot -->
+              <circle class="flow-node-dot node-start-dot" cx="40" cy="24" r="3.5" />
+
+              <!-- Node 2: Hanoi Milestone Anchor -->
+              <circle class="flow-node-ring node-hanoi-ring" cx="333" cy="24" r="10" />
+              <circle class="flow-node-dot node-hanoi-dot" cx="333" cy="24" r="5" />
+
+              <!-- Node 3: HCM Milestone Anchor -->
+              <circle class="flow-node-ring node-hcm-ring" cx="833" cy="24" r="12" />
+              <circle class="flow-node-dot node-hcm-dot" cx="833" cy="24" r="6" />
+            </svg>
+
+            <!-- 2 Stage Header Badges superimposed on the track -->
+            <div class="journey-headers-grid">
+              
+              <!-- Header Hanoi (Spans col 1 & 2, centered at 33.3%) -->
+              <div class="journey-header-col header-hanoi-col">
+                <div class="journey-stage-group-header badge-hanoi">
+                  <span class="badge-dot dot-hanoi"></span>
+                  <span>CHẶNG HÀ NỘI · 17.09.2026</span>
+                </div>
               </div>
+
+              <!-- Header HCM (Spans col 3, centered at 83.3%) -->
+              <div class="journey-header-col header-hcm-col">
+                <div class="journey-stage-group-header header-gold badge-hcm">
+                  <span class="badge-dot dot-gold"></span>
+                  <span>CHẶNG HCM · 23.09.2026</span>
+                </div>
+              </div>
+
             </div>
 
-            <!-- Header HCM (Spans col 3) -->
-            <div class="journey-header-item header-hcm">
-              <div class="journey-stage-group-header header-gold">
-                <span class="badge-dot dot-gold"></span>
-                <span>CHẶNG HCM · 23.09.2026</span>
-              </div>
-            </div>
+          </div>
 
-            <!-- Card 1: 3.800+ LƯỢT ĐĂNG KÝ (Col 1) -->
-            <div class="exact-card exact-card-cyan card-col-1">
+          <!-- 3-Column Grid: 3 cards have equal 1fr width & gap -->
+          <div class="journey-cards-grid">
+            
+            <!-- Card 1: 3.800+ LƯỢT ĐĂNG KÝ -->
+            <div class="exact-card exact-card-cyan card-hanoi-1">
               <div class="exact-card-icon icon-cyan">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1z" fill="#38bdf8"/>
@@ -148,8 +211,8 @@
               <div class="exact-card-bar bar-cyan"></div>
             </div>
 
-            <!-- Card 2: 400+ LƯỢT LAN TỎA (Col 2) -->
-            <div class="exact-card exact-card-cyan card-col-2">
+            <!-- Card 2: 400+ LƯỢT LAN TỎA -->
+            <div class="exact-card exact-card-cyan card-hanoi-2">
               <div class="exact-card-icon icon-cyan">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="18" cy="5" r="3" fill="#38bdf8"/>
@@ -164,8 +227,8 @@
               <div class="exact-card-bar bar-cyan"></div>
             </div>
 
-            <!-- Card 3: 30+ BÀI BÁO & ĐƠN VỊ TRUYỀN THÔNG ĐƯA TIN (Col 3) -->
-            <div class="exact-card exact-card-gold card-col-3">
+            <!-- Card 3: 30+ BÀI BÁO & ĐƠN VỊ TRUYỀN THÔNG ĐƯA TIN -->
+            <div class="exact-card exact-card-gold card-hcm-1">
               <div class="exact-card-icon icon-gold">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
