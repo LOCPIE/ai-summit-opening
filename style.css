@@ -1331,20 +1331,20 @@ body {
 .speaker-single-layout {
   display: flex;
   align-items: center;
-  gap: 5vw;
+  gap: 4vw;
   width: 100%;
-  max-width: 1300px;
+  max-width: 1480px;
 }
 
 .speaker-single-content {
   flex: 1.25;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.1rem;
 }
 
 .speaker-single-media {
-  flex: 0.9;
+  flex: 0.95;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1353,9 +1353,9 @@ body {
 
 .speaker-avatar-wrapper {
   position: relative;
-  width: min(380px, 34vw);
-  aspect-ratio: 1 / 1.1;
-  border-radius: 28px;
+  width: min(440px, 36vw);
+  aspect-ratio: 1 / 1.12;
+  border-radius: 30px;
   overflow: hidden;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(46, 107, 194, 0.4);
   border: 2px solid rgba(255, 255, 255, 0.25);
@@ -1375,14 +1375,14 @@ body {
 }
 
 .speaker-name {
-  font-size: clamp(2rem, 3.4vw, 3.2rem);
+  font-size: clamp(2.4rem, 3.8vw, 3.6rem);
   font-weight: 800;
   color: #ffffff;
   line-height: 1.1;
 }
 
 .speaker-position {
-  font-size: clamp(1.15rem, 1.7vw, 1.55rem);
+  font-size: clamp(1.3rem, 1.95vw, 1.75rem);
   font-weight: 600;
   color: var(--accent-cyan);
   line-height: 1.35;
@@ -1392,23 +1392,23 @@ body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
-  margin-top: 0.5rem;
+  gap: 0.95rem;
+  margin-top: 0.4rem;
 }
 
 .speaker-bio-list li {
   position: relative;
-  padding-left: 28px;
-  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  padding-left: 30px;
+  font-size: clamp(1.15rem, 1.45vw, 1.35rem);
   color: #e2e8f0;
-  line-height: 1.45;
+  line-height: 1.48;
 }
 
 .speaker-bio-list li::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 9px;
+  top: 8px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -1912,9 +1912,9 @@ body {
   background: rgba(56, 189, 248, 0.12);
   border: 1px solid rgba(56, 189, 248, 0.35);
   color: #38bdf8;
-  font-size: 0.74rem;
+  font-size: clamp(0.82rem, 1vw, 0.95rem);
   font-weight: 700;
-  padding: 3px 9px;
+  padding: 4px 12px;
   border-radius: 9999px;
   margin-bottom: 0.6rem;
   text-transform: uppercase;
@@ -2473,13 +2473,13 @@ body {
 
 .slides-viewport.ratio-9-45 .speaker-single-layout,
 .slides-viewport.ratio-8-4 .speaker-single-layout {
-  max-width: 1420px;
-  gap: 4.5vw;
+  max-width: 1560px;
+  gap: 4vw;
 }
 
 .slides-viewport.ratio-9-45 .speaker-avatar-wrapper,
 .slides-viewport.ratio-8-4 .speaker-avatar-wrapper {
-  width: min(340px, 30vw);
+  width: min(390px, 32vw);
 }
 
 .slides-viewport.ratio-9-45 .agenda-container-card,
@@ -2510,8 +2510,8 @@ body {
 .slides-viewport.ratio-10-4 .speaker-single-layout,
 .slides-viewport.ratio-12-5 .speaker-single-layout,
 .slides-viewport.ratio-21-9 .speaker-single-layout {
-  max-width: 1720px;
-  gap: 4vw;
+  max-width: 1780px;
+  gap: 3.8vw;
 }
 
 .slides-viewport.ratio-9-3 .speaker-single-content,
@@ -2527,7 +2527,7 @@ body {
 .slides-viewport.ratio-10-4 .speaker-name,
 .slides-viewport.ratio-12-5 .speaker-name,
 .slides-viewport.ratio-21-9 .speaker-name {
-  font-size: clamp(1.8rem, 2.3vw, 2.6rem);
+  font-size: clamp(2rem, 2.5vw, 2.9rem);
 }
 
 .slides-viewport.ratio-9-3 .speaker-position,
@@ -2535,7 +2535,7 @@ body {
 .slides-viewport.ratio-10-4 .speaker-position,
 .slides-viewport.ratio-12-5 .speaker-position,
 .slides-viewport.ratio-21-9 .speaker-position {
-  font-size: clamp(1rem, 1.2vw, 1.25rem);
+  font-size: clamp(1.1rem, 1.35vw, 1.4rem);
 }
 
 .slides-viewport.ratio-9-3 .speaker-bio-list,
@@ -2552,9 +2552,9 @@ body {
 .slides-viewport.ratio-10-4 .speaker-bio-list li,
 .slides-viewport.ratio-12-5 .speaker-bio-list li,
 .slides-viewport.ratio-21-9 .speaker-bio-list li {
-  font-size: clamp(0.85rem, 1vw, 1.02rem);
-  line-height: 1.34;
-  padding-left: 22px;
+  font-size: clamp(0.95rem, 1.12vw, 1.15rem);
+  line-height: 1.36;
+  padding-left: 24px;
 }
 
 .slides-viewport.ratio-9-3 .speaker-bio-list li::before,
@@ -2563,8 +2563,8 @@ body {
 .slides-viewport.ratio-12-5 .speaker-bio-list li::before,
 .slides-viewport.ratio-21-9 .speaker-bio-list li::before {
   top: 6px;
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
 }
 
 .slides-viewport.ratio-9-3 .speaker-avatar-wrapper,
@@ -2572,8 +2572,8 @@ body {
 .slides-viewport.ratio-10-4 .speaker-avatar-wrapper,
 .slides-viewport.ratio-12-5 .speaker-avatar-wrapper,
 .slides-viewport.ratio-21-9 .speaker-avatar-wrapper {
-  width: min(250px, 35vh);
-  border-radius: 20px;
+  width: min(290px, 40vh);
+  border-radius: 24px;
 }
 
 .slides-viewport.ratio-9-3 .speaker-track-tag,
@@ -2583,7 +2583,7 @@ body {
 .slides-viewport.ratio-21-9 .speaker-track-tag {
   margin-top: 0.1rem !important;
   margin-bottom: 0.3rem !important;
-  font-size: 0.85rem !important;
+  font-size: 0.88rem !important;
   padding: 3px 12px !important;
 }
 
