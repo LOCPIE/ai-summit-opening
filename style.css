@@ -543,13 +543,14 @@ body {
   align-items: stretch;
   gap: 36px;
   width: 100%;
-  max-width: 1080px;
+  max-width: 1360px; /* Tăng bề ngang khung chứa 3 thẻ */
 }
 
 .exact-card {
   flex: 1;
-  max-width: 320px;
-  min-height: 360px;
+  max-width: 420px; /* Tăng bề ngang từng ô từ 320px lên 420px */
+  min-width: 320px;
+  min-height: 350px;
   background: linear-gradient(180deg, rgba(28, 62, 150, 0.75) 0%, rgba(14, 34, 94, 0.88) 100%);
   border: 1px solid rgba(56, 189, 248, 0.28);
   border-top: 1.5px solid rgba(147, 197, 253, 0.55);
@@ -557,7 +558,7 @@ body {
   -webkit-backdrop-filter: blur(20px);
   border-radius: 24px;
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.18);
-  padding: 36px 24px 28px;
+  padding: 36px 32px 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -637,11 +638,21 @@ body {
 }
 
 /* Responsive / Screen Ratio Adaptations for Slide 4 */
+.slides-viewport.ratio-9-3 .journey-exact-cards,
+.slides-viewport.ratio-9-45 .journey-exact-cards,
+.slides-viewport.ratio-12-4 .journey-exact-cards,
+.slides-viewport.ratio-10-4 .journey-exact-cards {
+  max-width: 1560px;
+  gap: 40px;
+}
+
 .slides-viewport.ratio-9-3 .exact-card,
 .slides-viewport.ratio-9-45 .exact-card,
-.slides-viewport.ratio-12-4 .exact-card {
+.slides-viewport.ratio-12-4 .exact-card,
+.slides-viewport.ratio-10-4 .exact-card {
+  max-width: 480px;
   min-height: 290px;
-  padding: 24px 18px 22px;
+  padding: 24px 28px 22px;
 }
 
 .slides-viewport.ratio-9-3 .exact-card-num,
