@@ -427,7 +427,7 @@ body {
 }
 
 /* ==========================================================================
-   SLIDE 4: DẤU ẤN LAN TỎA (THEO ẢNH MẪU CHÍNH XÁC - 3 CARDS ROYALE BLUE)
+   SLIDE 4: DẤU ẤN LAN TỎA (HÀ NỘI & HCM TỔNG HỢP - THEO ẢNH MẪU)
    ========================================================================== */
 
 .slide.slide-journey-dark {
@@ -444,34 +444,7 @@ body {
   border: none !important;
 }
 
-.journey-ambient-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 1200px;
-  height: 600px;
-  background: radial-gradient(ellipse, rgba(56, 189, 248, 0.2) 0%, rgba(30, 80, 200, 0.15) 50%, transparent 75%);
-  filter: blur(90px);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.journey-bg-pattern {
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 54px 54px;
-  opacity: 0.55;
-  pointer-events: none;
-  z-index: 0;
-  mask-image: radial-gradient(ellipse at center, black 50%, transparent 90%);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 50%, transparent 90%);
-}
-
-.journey-exact-container {
+.journey-dual-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -483,40 +456,13 @@ body {
   margin: auto;
 }
 
-/* 1. Top Pill Badge */
-.journey-exact-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 7px 22px;
-  background: rgba(18, 48, 128, 0.65);
-  border: 1px solid rgba(56, 189, 248, 0.45);
-  border-radius: 9999px;
-  box-shadow: 0 0 16px rgba(56, 189, 248, 0.25);
-  color: #e0f2fe;
-  font-size: clamp(0.78rem, 0.95vw, 0.92rem);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 1.8vh;
-}
-
-.journey-exact-badge .badge-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #38bdf8;
-  box-shadow: 0 0 8px #38bdf8;
-}
-
-/* 2. Main Title */
 .journey-exact-header {
   text-align: center;
-  margin-bottom: 5vh;
+  margin-bottom: 3.5vh;
 }
 
 .journey-exact-title {
-  font-size: clamp(2.8rem, 4.2vw, 4.5rem);
+  font-size: clamp(2.6rem, 3.8vw, 4.2rem);
   font-weight: 900;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -530,26 +476,89 @@ body {
   width: 76px;
   height: 3.5px;
   background: #38bdf8;
-  margin: 14px auto 0;
+  margin: 12px auto 0;
   border-radius: 3px;
   box-shadow: 0 0 14px #38bdf8, 0 0 28px rgba(56, 189, 248, 0.85);
 }
 
-/* 3. 3 Cards Row */
-.journey-exact-cards {
+/* 2 Stage Groups Grid (Hà Nội on left, HCM on right) */
+.journey-dual-stages {
   display: flex;
   justify-content: center;
   align-items: stretch;
   gap: 36px;
   width: 100%;
-  max-width: 1360px; /* Tăng bề ngang khung chứa 3 thẻ */
+  max-width: 1380px;
+}
+
+.journey-stage-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.journey-stage-group.group-hanoi {
+  flex: 2;
+}
+
+.journey-stage-group.group-hcm {
+  flex: 1;
+  max-width: 440px;
+}
+
+.journey-stage-group-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 22px;
+  background: rgba(18, 48, 128, 0.65);
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  border-radius: 9999px;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.25);
+  color: #e0f2fe;
+  font-size: clamp(0.82rem, 1.0vw, 1.02rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 2.2vh;
+}
+
+.journey-stage-group-header .badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+}
+
+.journey-stage-group-header.header-gold {
+  background: rgba(35, 45, 95, 0.65);
+  border-color: rgba(250, 204, 21, 0.5);
+  box-shadow: 0 0 16px rgba(250, 204, 21, 0.25);
+}
+
+.journey-stage-group-header .dot-gold {
+  background: #facc15;
+  box-shadow: 0 0 8px #facc15;
+}
+
+.journey-stage-group-cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 28px;
+  width: 100%;
+  flex: 1;
+}
+
+.group-hcm .journey-stage-group-cards .exact-card {
+  max-width: 100%;
+  width: 100%;
 }
 
 .exact-card {
   flex: 1;
-  max-width: 420px; /* Tăng bề ngang từng ô từ 320px lên 420px */
-  min-width: 320px;
-  min-height: 350px;
+  min-height: 330px;
   background: linear-gradient(180deg, rgba(28, 62, 150, 0.75) 0%, rgba(14, 34, 94, 0.88) 100%);
   border: 1px solid rgba(56, 189, 248, 0.28);
   border-top: 1.5px solid rgba(147, 197, 253, 0.55);
@@ -557,7 +566,7 @@ body {
   -webkit-backdrop-filter: blur(20px);
   border-radius: 24px;
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.18);
-  padding: 36px 32px 28px;
+  padding: 32px 26px 26px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -571,15 +580,14 @@ body {
   box-shadow: 0 26px 52px rgba(0, 0, 0, 0.5), 0 0 28px rgba(56, 189, 248, 0.28);
 }
 
-/* Icons */
 .exact-card-icon {
-  width: 58px;
-  height: 58px;
+  width: 56px;
+  height: 56px;
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .exact-card-icon.icon-cyan {
@@ -594,9 +602,8 @@ body {
   box-shadow: 0 0 18px rgba(250, 204, 21, 0.28);
 }
 
-/* Number */
 .exact-card-num {
-  font-size: clamp(3.2rem, 4.6vw, 4.4rem);
+  font-size: clamp(3.0rem, 4.2vw, 4.2rem);
   font-weight: 900;
   color: #ffffff;
   letter-spacing: -0.02em;
@@ -604,24 +611,22 @@ body {
   margin: 10px 0 12px;
 }
 
-/* Label */
 .exact-card-lbl {
-  font-size: clamp(0.85rem, 1.05vw, 1.05rem);
+  font-size: clamp(0.82rem, 1.0vw, 1.02rem);
   font-weight: 700;
   color: #dbeafe;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   line-height: 1.45;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Bottom Bar */
 .exact-card-bar {
-  width: 54px;
+  width: 52px;
   height: 3.5px;
   border-radius: 3px;
 }
@@ -636,34 +641,28 @@ body {
   box-shadow: 0 0 12px #facc15, 0 0 24px rgba(250, 204, 21, 0.75);
 }
 
-/* Responsive / Screen Ratio Adaptations for Slide 4 */
-.slides-viewport.ratio-9-3 .journey-exact-cards,
-.slides-viewport.ratio-9-45 .journey-exact-cards,
-.slides-viewport.ratio-12-4 .journey-exact-cards,
-.slides-viewport.ratio-10-4 .journey-exact-cards {
+/* Multi-ratio adaptations */
+.slides-viewport.ratio-9-3 .journey-dual-stages,
+.slides-viewport.ratio-9-45 .journey-dual-stages,
+.slides-viewport.ratio-12-4 .journey-dual-stages,
+.slides-viewport.ratio-10-4 .journey-dual-stages {
   max-width: 1560px;
-  gap: 40px;
+  gap: 36px;
 }
 
 .slides-viewport.ratio-9-3 .exact-card,
 .slides-viewport.ratio-9-45 .exact-card,
 .slides-viewport.ratio-12-4 .exact-card,
 .slides-viewport.ratio-10-4 .exact-card {
-  max-width: 480px;
-  min-height: 290px;
-  padding: 24px 28px 22px;
+  min-height: 270px;
+  padding: 20px 22px 18px;
 }
 
 .slides-viewport.ratio-9-3 .exact-card-num,
 .slides-viewport.ratio-9-45 .exact-card-num,
-.slides-viewport.ratio-12-4 .exact-card-num {
-  font-size: clamp(2.5rem, 3.4vw, 3.5rem);
-}
-
-.slides-viewport.ratio-9-3 .journey-exact-header,
-.slides-viewport.ratio-9-45 .journey-exact-header,
-.slides-viewport.ratio-12-4 .journey-exact-header {
-  margin-bottom: 2.8vh;
+.slides-viewport.ratio-12-4 .exact-card-num,
+.slides-viewport.ratio-10-4 .exact-card-num {
+  font-size: clamp(2.4rem, 3.2vw, 3.4rem);
 }
 
 
