@@ -19,9 +19,9 @@
       <div class="bg-grid-overlay"></div>
     </div>
 
-    <!-- Toast Notification for restored slide progress -->
+    <!-- Toast Notification for restored slide progress & LED changes -->
     <div id="toastNotice" class="toast-notice" role="alert">
-      <span>Đã khôi phục tiến độ slide <strong id="restoredSlideNum">1</strong></span>
+      <span id="toastMessage">Đã khôi phục tiến độ slide <strong id="restoredSlideNum">1</strong></span>
     </div>
 
     <!-- Side Navigation Arrows -->
@@ -35,8 +35,30 @@
     <!-- Main Viewport for Slides (16:9 Standard) -->
     <main class="slides-viewport" id="slidesViewport">
 
-      <!-- SLIDE 1: ĐỐI TÁC ĐỒNG HÀNH TRUYỀN THÔNG -->
-      <section class="slide active" data-slide-index="1" data-title="Đối tác đồng hành">
+      <!-- SLIDE 1: DIỄN GIẢ KHAI MẠC: BÀ PHÙNG THỊ HẢI HÀ -->
+      <section class="slide active" data-slide-index="1" data-title="Diễn giả Phùng Thị Hải Hà">
+        <div class="speaker-single-layout">
+          <div class="speaker-single-content animate-in delay-1">
+            <div class="badge-pill keynote-badge" style="margin-bottom: 0.5rem;">DIỄN GIẢ KHAI MẠC</div>
+            <h2 class="speaker-name">Bà Phùng Thị Hải Hà</h2>
+            <p class="speaker-position">Giám đốc Marketing Base.vn</p>
+            <ul class="speaker-bio-list">
+              <li>Dẫn dắt các hoạt động Truyền thông thương hiệu, Marketing và Phát triển thị trường của nền tảng quản trị doanh nghiệp Base.vn.</li>
+              <li>10+ năm kinh nghiệm Marketing trong các lĩnh vực Công nghệ, Giáo dục và Thương mại điện tử.</li>
+              <li>Chuyên gia Go-to-Market & Chuyển đổi số B2B - Trực tiếp xây dựng chiến lược tăng trưởng, tái định vị thương hiệu và triển khai marketing dựa trên dữ liệu cho các tổ chức từ startup đến tập đoàn.</li>
+              <li>Thạc sĩ Marketing – University of Galway (Ireland), học bổng toàn phần Chính phủ Ireland (IFP).</li>
+            </ul>
+          </div>
+          <div class="speaker-single-media animate-in delay-2">
+            <div class="speaker-avatar-wrapper">
+              <img src="Ảnh diễn giả/ba-phung-thi-hai-ha.png" alt="Bà Phùng Thị Hải Hà" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: ĐỐI TÁC ĐỒNG HÀNH TRUYỀN THÔNG -->
+      <section class="slide" data-slide-index="2" data-title="Đối tác đồng hành">
         <div class="slide-title-header animate-in delay-1">
           <h2 class="slide-title">ĐỐI TÁC ĐỒNG HÀNH TRUYỀN THÔNG</h2>
         </div>
@@ -53,8 +75,8 @@
         </div>
       </section>
 
-      <!-- SLIDE 2: CÁC ĐỐI TÁC LAN TOẢ TRUYỀN THÔNG -->
-      <section class="slide" data-slide-index="2" data-title="Đối tác lan toả">
+      <!-- SLIDE 3: CÁC ĐỐI TÁC LAN TOẢ TRUYỀN THÔNG -->
+      <section class="slide" data-slide-index="3" data-title="Đối tác lan toả">
         <div class="slide-title-header animate-in delay-1">
           <h2 class="slide-title">CÁC ĐỐI TÁC LAN TOẢ TRUYỀN THÔNG</h2>
         </div>
@@ -67,7 +89,7 @@
 
           <!-- Row 2 -->
           <div class="partner-card-small"><img src="Tổng hợp logo lan toả/A&PLOGO.png" alt="A&P" loading="lazy"></div>
-          <div class="partner-card-small"><img class="logo-itf" src="Tổng hợp logo lan toả/ITF.jpg?v=itf3" alt="ITF" loading="lazy"></div>
+          <div class="partner-card-small"><img class="logo-itf" src="Tổng hợp logo lan toả/ITF.jpg" alt="ITF" loading="lazy"></div>
           <div class="partner-card-small"><img src="Tổng hợp logo lan toả/GMPc.jpg" alt="GMPc" loading="lazy"></div>
           <div class="partner-card-small"><img src="Tổng hợp logo lan toả/ITViec.png" alt="ITViec" loading="lazy"></div>
 
@@ -85,54 +107,71 @@
         </div>
       </section>
 
-      <!-- SLIDE 3: DẤU ẤN LAN TỎA (METRICS) -->
-      <section class="slide slide-metrics" data-slide-index="3" data-title="Dấu ấn lan tỏa">
-        <div class="slide4-ambient-glow"></div>
-        <div class="slide4-header animate-in delay-1">
-          <div class="badge-pill slide4-badge">
+            <!-- SLIDE 4: DẤU ẤN LAN TỎA (THEO ẢNH MẪU CHÍNH XÁC) -->
+      <section class="slide slide-journey-dark" data-slide-index="4" data-title="Dấu ấn lan tỏa">
+        
+        <div class="journey-exact-container">
+          <!-- Top Pill Badge -->
+          <div class="journey-exact-badge">
             <span class="badge-dot"></span>
-            CHẶNG HÀ NỘI · 17.09.2026
-          </div>
-          <h2 class="slide-title slide4-main-title">DẤU ẤN LAN TỎA</h2>
-        </div>
-        <div class="metrics-row">
-          <!-- Metric Card 1: Lượt đăng ký -->
-          <div class="metric-card animate-in delay-2" data-metric-card="1">
-            <div class="metric-card-glow"></div>
-            <div class="metric-icon-circle">
-              <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.96.76 1.58V19z"/></svg>
-            </div>
-            <div class="metric-number" data-target="2068" data-separator=".">2.068</div>
-            <div class="metric-label">lượt đăng ký</div>
-            <div class="metric-accent-bar"></div>
+            <span>CHẶNG HÀ NỘI - 17.09.2026</span>
           </div>
 
-          <!-- Metric Card 2: Lượt lan tỏa -->
-          <div class="metric-card animate-in delay-3" data-metric-card="2">
-            <div class="metric-card-glow"></div>
-            <div class="metric-icon-circle">
-              <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-            </div>
-            <div class="metric-number" data-target="300" data-suffix="+">300+</div>
-            <div class="metric-label">lượt lan tỏa</div>
-            <div class="metric-accent-bar"></div>
+          <!-- Main Title & Underline Bar -->
+          <div class="journey-exact-header">
+            <h1 class="journey-exact-title">DẤU ẤN LAN TỎA</h1>
+            <div class="journey-exact-underline"></div>
           </div>
 
-          <!-- Metric Card 3: Đối tác đồng hành -->
-          <div class="metric-card animate-in delay-4" data-metric-card="3">
-            <div class="metric-card-glow"></div>
-            <div class="metric-icon-circle highlight">
-              <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M16.5 12c1.38 0 2.49-1.12 2.49-2.5S17.88 7 16.5 7C15.12 7 14 8.12 14 9.5s1.12 2.5 2.5 2.5zM9 11c1.66 0 2.99-1.34 2.99-3S10.66 5 9 5C7.34 5 6 6.34 6 8s1.34 3 3 3zm7.5 3c-1.83 0-5.5.92-5.5 2.75V19h11v-2.25c0-1.83-3.67-2.75-5.5-2.75zM9 13c-2.33 0-7 1.17-7 3.5V19h7v-2.25c0-.85.33-1.63.9-2.28-.4-.3-.9-.47-1.4-.47z"/></svg>
+          <!-- 3 Highlight Cards -->
+          <div class="journey-exact-cards">
+            
+            <!-- Card 1: 2.068 LƯỢT ĐĂNG KÝ -->
+            <div class="exact-card exact-card-cyan">
+              <div class="exact-card-icon icon-cyan">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1z" fill="#38bdf8"/>
+                </svg>
+              </div>
+              <div class="exact-card-num">2.068</div>
+              <div class="exact-card-lbl">LƯỢT ĐĂNG KÝ</div>
+              <div class="exact-card-bar bar-cyan"></div>
             </div>
-            <div class="metric-number highlight-num" data-target="50" data-suffix="+">50+</div>
-            <div class="metric-label">Đối tác · Hiệp hội · Cộng đồng đồng hành</div>
-            <div class="metric-accent-bar highlight"></div>
+
+            <!-- Card 2: 300+ LƯỢT LAN TỎA -->
+            <div class="exact-card exact-card-cyan">
+              <div class="exact-card-icon icon-cyan">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="18" cy="5" r="3" fill="#38bdf8"/>
+                  <circle cx="6" cy="12" r="3" fill="#38bdf8"/>
+                  <circle cx="18" cy="19" r="3" fill="#38bdf8"/>
+                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                </svg>
+              </div>
+              <div class="exact-card-num">300+</div>
+              <div class="exact-card-lbl">LƯỢT LAN TỎA</div>
+              <div class="exact-card-bar bar-cyan"></div>
+            </div>
+
+            <!-- Card 3: 50+ ĐỐI TÁC... -->
+            <div class="exact-card exact-card-gold">
+              <div class="exact-card-icon icon-gold">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="#facc15">
+                  <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                </svg>
+              </div>
+              <div class="exact-card-num">50+</div>
+              <div class="exact-card-lbl">ĐỐI TÁC · HIỆP HỘI ·<br>CỘNG ĐỒNG ĐỒNG<br>HÀNH</div>
+              <div class="exact-card-bar bar-gold"></div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      <!-- SLIDE 4: KEYNOTES AGENDA (ACCORDION FULL VIEW) -->
-      <section class="slide slide-agenda" data-slide-index="4" data-title="Keynotes Agenda">
+      <!-- SLIDE 5: KEYNOTES AGENDA (ACCORDION FULL VIEW) -->
+      <section class="slide slide-agenda" data-slide-index="5" data-title="Keynotes Agenda">
         <div class="agenda-container-card">
 
           <!-- KEYNOTE 01 -->
@@ -140,7 +179,7 @@
             <div class="agenda-block-header" onclick="toggleAgenda(1)">
               <div class="agenda-header-left">
                 <div class="agenda-title-row">
-                  <h2 class="agenda-main-title">Intelligence Architecture</h2>
+                  <h2 class="agenda-main-title">Intelligent Architect</h2>
                   <span class="agenda-keynote-pill">Keynote 01</span>
                 </div>
                 <p class="agenda-main-desc">Định hình kiến trúc AI cho vận hành doanh nghiệp</p>
@@ -153,39 +192,15 @@
             </div>
             <div class="agenda-block-body-wrapper">
               <div class="agenda-block-body">
-                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(6)">
-                  <span class="subrow-num">1.1</span>
-                  <span class="subrow-speaker">Ông Phạm Kim Hùng</span>
-                  <span class="subrow-sep">-</span>
+                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(7)">
+                  <span class="subrow-num">1</span>
                   <span class="subrow-topic">Intelligent Architecture</span>
+                  <span class="subrow-sep">-</span>
+                  <span class="subrow-speaker">Ông Phạm Kim Hùng</span>
                   <div class="subrow-aside">
                     <span class="subrow-time">20 phút</span>
                     <svg class="subrow-play-icon" viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
                   </div>
-                </div>
-                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(7)">
-                  <span class="subrow-num">1.2</span>
-                  <span class="subrow-speaker">Ông Trần Tuấn Anh Nghĩa</span>
-                  <span class="subrow-sep">-</span>
-                  <span class="subrow-topic">Base Work OS</span>
-                </div>
-                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(7)">
-                  <span class="subrow-num">1.3</span>
-                  <span class="subrow-speaker">Ông Nguyễn Phi Hùng</span>
-                  <span class="subrow-sep">-</span>
-                  <span class="subrow-topic">Base HRM - People OS</span>
-                </div>
-                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(7)">
-                  <span class="subrow-num">1.4</span>
-                  <span class="subrow-speaker">Ông Hoàng Thanh Nguyện</span>
-                  <span class="subrow-sep">-</span>
-                  <span class="subrow-topic">Base CRM - Business OS</span>
-                </div>
-                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(7)">
-                  <span class="subrow-num">1.5</span>
-                  <span class="subrow-speaker">Ông Lê Bảo Ngọc</span>
-                  <span class="subrow-sep">-</span>
-                  <span class="subrow-topic">From SME to Enterprise</span>
                 </div>
               </div>
             </div>
@@ -196,10 +211,10 @@
             <div class="agenda-block-header" onclick="toggleAgenda(2)">
               <div class="agenda-header-left">
                 <div class="agenda-title-row">
-                  <h2 class="agenda-main-title">Agent Architecture & AI Research</h2>
-                  <span class="agenda-keynote-pill">Keynote 02</span>
+                  <h2 class="agenda-main-title">The New Base</h2>
+                  <span class="agenda-keynote-pill">KEYNOTE 02</span>
                 </div>
-                <p class="agenda-main-desc">Mô hình trí tuệ nhân tạo chuyên biệt cho doanh nghiệp Việt Nam</p>
+                <p class="agenda-main-desc">Khám phá các sản phẩm mới của Base 2.0</p>
               </div>
               <div class="agenda-header-right">
                 <button class="agenda-chevron-btn" aria-label="Mở rộng / Thu gọn Keynote 02">
@@ -209,17 +224,32 @@
             </div>
             <div class="agenda-block-body-wrapper">
               <div class="agenda-block-body">
-                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(8)">
-                  <span class="subrow-num">2.1</span>
-                  <span class="subrow-speaker">Ông Phạm Kim Hùng</span>
-                  <span class="subrow-sep">-</span>
-                  <span class="subrow-topic">Agent Architecture</span>
-                </div>
                 <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(9)">
-                  <span class="subrow-num">2.2</span>
-                  <span class="subrow-speaker">TS. Triệu Hải Long & Ông Hoàng Thanh Nguyện</span>
+                  <span class="subrow-num">2.1</span>
+                  <span class="subrow-topic">Sales &amp; Marketing OS</span>
                   <span class="subrow-sep">-</span>
-                  <span class="subrow-topic">AI Model Research</span>
+                  <span class="subrow-speaker">Ông Trần Tuấn Anh Nghĩa + Ông Hoàng Thanh Nguyện</span>
+                  <div class="subrow-aside">
+                    <svg class="subrow-play-icon" viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(10)">
+                  <span class="subrow-num">2.2</span>
+                  <span class="subrow-topic">People OS</span>
+                  <span class="subrow-sep">-</span>
+                  <span class="subrow-speaker">Ông Nguyễn Phi Hùng</span>
+                  <div class="subrow-aside">
+                    <svg class="subrow-play-icon" viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(12)">
+                  <span class="subrow-num">2.3</span>
+                  <span class="subrow-topic">Work OS</span>
+                  <span class="subrow-sep">-</span>
+                  <span class="subrow-speaker">Ông Lê Bảo Ngọc - Ông Trần Tuấn Anh Nghĩa</span>
+                  <div class="subrow-aside">
+                    <svg class="subrow-play-icon" viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -233,7 +263,7 @@
                   <h2 class="agenda-main-title">AI Device</h2>
                   <span class="agenda-keynote-pill">Keynote 03</span>
                 </div>
-                <p class="agenda-main-desc">Hoàn thiện kiến trúc vận hành bằng thiết bị AI</p>
+                <p class="agenda-main-desc">Hoàn thiện kiến trúc vận hành bằng thiết bị AI chuyên biệt</p>
               </div>
               <div class="agenda-header-right">
                 <button class="agenda-chevron-btn" aria-label="Mở rộng / Thu gọn Keynote 03">
@@ -243,9 +273,14 @@
             </div>
             <div class="agenda-block-body-wrapper">
               <div class="agenda-block-body">
-                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(11)">
-                  <span class="subrow-num">3.1</span>
-                  <span class="subrow-speaker">Bà Hà Việt Phương và Bà Nguyễn Kim Cúc</span>
+                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(14)">
+                  <span class="subrow-num">3</span>
+                  <span class="subrow-topic">AI Device</span>
+                  <span class="subrow-sep">-</span>
+                  <span class="subrow-speaker">Bà Hà Việt Phương + Bà Nguyễn Kim Cúc</span>
+                  <div class="subrow-aside">
+                    <svg class="subrow-play-icon" viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -256,10 +291,10 @@
             <div class="agenda-block-header" onclick="toggleAgenda(4)">
               <div class="agenda-header-left">
                 <div class="agenda-title-row">
-                  <h2 class="agenda-main-title">Universe of Work</h2>
+                  <h2 class="agenda-main-title">Agent Architecture &amp; AI Model Research Project</h2>
                   <span class="agenda-keynote-pill">Keynote 04</span>
                 </div>
-                <p class="agenda-main-desc">Hệ sinh thái vận hành đa doanh nghiệp</p>
+                <p class="agenda-main-desc">Mô hình trí tuệ nhân tạo chuyên biệt &amp; Kiến trúc tác tử tự hành</p>
               </div>
               <div class="agenda-header-right">
                 <button class="agenda-chevron-btn" aria-label="Mở rộng / Thu gọn Keynote 04">
@@ -269,17 +304,54 @@
             </div>
             <div class="agenda-block-body-wrapper">
               <div class="agenda-block-body">
-                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(12)">
+                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(17)">
                   <span class="subrow-num">4.1</span>
-                  <span class="subrow-speaker">Ông Trần Tuấn Anh Nghĩa</span>
+                  <span class="subrow-topic">AI Model Research Project</span>
                   <span class="subrow-sep">-</span>
-                  <span class="subrow-topic">Base Platform & Marketplace</span>
+                  <span class="subrow-speaker">TS. Triệu Hải Long + Ông Hoàng Thanh Nguyện</span>
+                  <div class="subrow-aside">
+                    <svg class="subrow-play-icon" viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+                  </div>
                 </div>
-                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(12)">
+                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(9)">
                   <span class="subrow-num">4.2</span>
-                  <span class="subrow-speaker">Ông Phạm Kim Hùng</span>
+                  <span class="subrow-topic">Agent Architecture</span>
                   <span class="subrow-sep">-</span>
-                  <span class="subrow-topic">Launching Timeline</span>
+                  <span class="subrow-speaker">Ông Phạm Kim Hùng + Ông Trần Tuấn Anh Nghĩa</span>
+                  <div class="subrow-aside">
+                    <svg class="subrow-play-icon" viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LAUNCHING TIMELINE & GO-LIVE -->
+          <div class="agenda-block" id="agenda-sec-5">
+            <div class="agenda-block-header" onclick="toggleAgenda(5)">
+              <div class="agenda-header-left">
+                <div class="agenda-title-row">
+                  <h2 class="agenda-main-title">Launching Timeline &amp; Go-live</h2>
+                  <span class="agenda-keynote-pill">Go-Live</span>
+                </div>
+                <p class="agenda-main-desc">Lộ trình triển khai &amp; Công bố chính thức các giải pháp AI</p>
+              </div>
+              <div class="agenda-header-right">
+                <button class="agenda-chevron-btn" aria-label="Mở rộng / Thu gọn Launching Timeline">
+                  <svg class="agenda-chevron-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="agenda-block-body-wrapper">
+              <div class="agenda-block-body">
+                <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(1)">
+                  <span class="subrow-num">5</span>
+                  <span class="subrow-topic">Launching Timeline &amp; Go-live</span>
+                  <span class="subrow-sep">-</span>
+                  <span class="subrow-speaker">Bà Phùng Thị Hải Hà</span>
+                  <div class="subrow-aside">
+                    <svg class="subrow-play-icon" viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -288,8 +360,8 @@
         </div>
       </section>
 
-      <!-- SLIDE 5: KEYNOTE 1 INTRO -->
-      <section class="slide" data-slide-index="5" data-title="Keynote 01: Intelligence Architecture">
+      <!-- SLIDE 6: KEYNOTE 1 INTRO -->
+      <section class="slide" data-slide-index="6" data-title="Keynote 01: Intelligent Architect">
         <div class="keynote-intro-box">
           <div class="badge-pill keynote-badge animate-in delay-1">
             <span class="badge-dot"></span>
@@ -300,8 +372,8 @@
         </div>
       </section>
 
-      <!-- SLIDE 6: KEYNOTE 1 DIỄN GIẢ: ÔNG PHẠM KIM HÙNG -->
-      <section class="slide" data-slide-index="6" data-title="Diễn giả Phạm Kim Hùng">
+      <!-- SLIDE 7: KEYNOTE 1 DIỄN GIẢ: ÔNG PHẠM KIM HÙNG -->
+      <section class="slide" data-slide-index="7" data-title="Diễn giả Phạm Kim Hùng">
         <div class="speaker-single-layout">
           <div class="speaker-single-content animate-in delay-1">
             <div class="badge-pill keynote-badge" style="margin-bottom: 0.5rem;">DIỄN GIẢ · KEYNOTE 01</div>
@@ -311,7 +383,7 @@
               <li>Nhà sáng lập Base.vn, đồng hành cùng ~12.000 khách hàng doanh nghiệp</li>
               <li>Forbes 30 Under 30 năm 2016</li>
               <li>Gương thanh niên Thủ đô khởi nghiệp sáng tạo tiêu biểu 2 năm 2017, 2018</li>
-              <li>Huy chương vàng & Huy chương bạc trong 2 kỳ thi Olympic Toán quốc tế</li>
+              <li>Huy chương vàng &amp; Huy chương bạc trong 2 kỳ thi Olympic Toán quốc tế</li>
               <li>Tốt nghiệp Đại học Stanford (Mỹ) Chuyên ngành Computer Science (học bổng toàn phần)</li>
             </ul>
           </div>
@@ -323,96 +395,191 @@
         </div>
       </section>
 
-      <!-- SLIDE 7: KEYNOTE 1 PANEL: 4 DIỄN GIẢ -->
-      <section class="slide" data-slide-index="7" data-title="Diễn giả Keynote 01">
-        <div class="slide-title-header animate-in delay-1" style="margin-bottom: 1.5rem;">
-          <div class="badge-pill keynote-badge" style="margin-bottom: 0.5rem;">DIỄN GIẢ · KEYNOTE 01</div>
-        </div>
-        <div class="speakers-grid-4 animate-in delay-2">
-          <!-- Col 1: Ông Trần Tuấn Anh Nghĩa -->
-          <div class="speaker-card-col">
-            <div class="speaker-col-avatar">
-              <img src="Ảnh diễn giả/ong-tran-tuan-anh-nghia.png" alt="Ông Trần Tuấn Anh Nghĩa" loading="lazy">
-            </div>
-            <h3 class="speaker-col-name">Ông Trần Tuấn Anh Nghĩa</h3>
-            <p class="speaker-col-title">Phó Tổng Giám đốc Base.vn</p>
-            <ul class="speaker-col-bullets">
-              <li>10+ năm kinh nghiệm Sales B2B trong lĩnh vực Công nghệ, dẫn dắt tăng trưởng hai chữ số qua nhiều năm</li>
-              <li>Phụ trách 1000+ dự án triển khai cho khách hàng lớn: SIP Corp, Vòng Xanh, Soc&Brothers, HimlamLand, Thiên Nam Hòa, Long Beach Pearl,...</li>
-              <li>Top 13 FPT Under 35 (2023)</li>
-              <li>Thạc sĩ ngành Quản trị Đổi mới và Sáng tạo tại Đại học Bournemouth, Anh Quốc</li>
-            </ul>
-          </div>
-
-          <!-- Col 2: Ông Nguyễn Phi Hùng -->
-          <div class="speaker-card-col">
-            <div class="speaker-col-avatar">
-              <img src="Ảnh diễn giả/ong-nguyen-phi-hung.png" alt="Ông Nguyễn Phi Hùng" loading="lazy">
-            </div>
-            <h3 class="speaker-col-name">Ông Nguyễn Phi Hùng</h3>
-            <p class="speaker-col-title">Giám đốc Phát triển sản phẩm Base.vn</p>
-            <ul class="speaker-col-bullets">
-              <li>Top 13 FPT Under 35 2025 – Hạng mục Công nghệ</li>
-              <li>Giải nhất cuộc thi Tin học của Santa Barbara City College</li>
-              <li>7+ năm kinh nghiệm phát triển sản phẩm, công nghệ & AI tại Base.vn</li>
-              <li>Tốt nghiệp xuất sắc của ngành Computer Science tại Đại học California Mỹ</li>
-            </ul>
-          </div>
-
-          <!-- Col 3: Ông Hoàng Thanh Nguyện -->
-          <div class="speaker-card-col">
-            <div class="speaker-col-avatar">
-              <img src="Ảnh diễn giả/ong-hoang-thanh-nguyen.png" alt="Ông Hoàng Thanh Nguyện" loading="lazy">
-            </div>
-            <h3 class="speaker-col-name">Ông Hoàng Thanh Nguyện</h3>
-            <p class="speaker-col-title">Giám đốc Triển khai chuyển đổi số Base.vn</p>
-            <ul class="speaker-col-bullets">
-              <li>8+ năm kinh nghiệm đồng hành cùng 600+ doanh nghiệp trong hành trình chuyển đổi số từ sản xuất, bán lẻ đến FDI & khối công</li>
-              <li>Trực tiếp triển khai bài toán quản trị & vận hành quy mô lớn: AMECC, Nhậu Tự Do, Traphaco, Dragon Group, Xi măng Xuân Thành, VTVcab...</li>
-              <li>Thám hoa Trạng FPT 2023</li>
-            </ul>
-          </div>
-
-          <!-- Col 4: Ông Lê Bảo Ngọc -->
-          <div class="speaker-card-col">
-            <div class="speaker-col-avatar">
-              <img src="Ảnh diễn giả/ong-le-bao-ngoc.png" alt="Ông Lê Bảo Ngọc" loading="lazy">
-            </div>
-            <h3 class="speaker-col-name">Ông Lê Bảo Ngọc</h3>
-            <p class="speaker-col-title">Giám đốc Khối khách hàng Doanh Nghiệp vừa và lớn Base.vn</p>
-            <ul class="speaker-col-bullets">
-              <li>8+ năm kinh nghiệm phụ trách các dự án Chuyển đổi số và ứng dụng AI cho nhiều doanh nghiệp lớn đầu ngành</li>
-              <li>Đồng hành cùng nhiều doanh nghiệp trong top VNR500 & FAST500: Domesco, Boston Pharma, Vemedim, Petrovietnam,...</li>
-              <li>Top 100 FPT (2025) & Top 13 Trạng FPT (2024)</li>
-              <li>Tốt nghiệp MBA Đại Học Khoa Học Ứng Dụng Anhalt, CHLB Đức</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
       <!-- SLIDE 8: KEYNOTE 2 INTRO -->
-      <section class="slide" data-slide-index="8" data-title="Keynote 02: Agent Architecture">
+      <section class="slide" data-slide-index="8" data-title="Keynote 02: The New Base">
         <div class="keynote-intro-box">
           <div class="badge-pill keynote-badge animate-in delay-1">
             <span class="badge-dot"></span>
             KEYNOTE 02
           </div>
-          <h1 class="keynote-intro-title animate-in delay-2">Agent Architecture & AI Research</h1>
-          <p class="keynote-intro-desc animate-in delay-3">Mô hình trí tuệ nhân tạo chuyên biệt cho doanh nghiệp Việt Nam</p>
+          <h1 class="keynote-intro-title animate-in delay-2">The New Base</h1>
+          <p class="keynote-intro-desc animate-in delay-3">Khám phá các sản phẩm mới của Base 2.0</p>
         </div>
       </section>
 
-      <!-- SLIDE 9: KEYNOTE 2 DIỄN GIẢ: TS TRIỆU HẢI LONG -->
-      <section class="slide" data-slide-index="9" data-title="Diễn giả Triệu Hải Long">
+      <!-- SLIDE 9: KEYNOTE 2 DIỄN GIẢ 1: ÔNG TRẦN TUẤN ANH NGHĨA -->
+      <section class="slide" data-slide-index="9" data-title="Diễn giả Trần Tuấn Anh Nghĩa">
         <div class="speaker-single-layout">
           <div class="speaker-single-content animate-in delay-1">
             <div class="badge-pill keynote-badge" style="margin-bottom: 0.5rem;">DIỄN GIẢ · KEYNOTE 02</div>
-            <h2 class="speaker-name">TS. Triệu Hải Long</h2>
-            <p class="speaker-position">Chuyên gia cao cấp Đại học Cambridge</p>
+            <h2 class="speaker-name">Ông Trần Tuấn Anh Nghĩa</h2>
+            <p class="speaker-position">Phó Tổng Giám đốc Base.vn</p>
+            <div class="speaker-track-tag" style="width: fit-content; margin-top: 0.2rem; margin-bottom: 0.6rem;">Sales &amp; Marketing OS · Work OS</div>
             <ul class="speaker-bio-list">
-              <li>Hơn 10 năm kinh nghiệm nghiên cứu và phát triển AI. Chuyên môn: Large Language Models (LLMs), AI Agents, Foundation Models, NLP, Chatbots</li>
+              <li>10+ năm kinh nghiệm Sales B2B trong lĩnh vực Công nghệ, dẫn dắt tăng trưởng hai chữ số qua nhiều năm</li>
+              <li>Phụ trách 1000+ dự án triển khai cho khách hàng lớn: SIP Corp, Vòng Xanh, Soc&amp;Brothers, HimlamLand, Thiên Nam Hòa, Long Beach Pearl,...</li>
+              <li>Top 13 FPT Under 35 (2023)</li>
+              <li>Thạc sĩ ngành Quản trị Đổi mới và Sáng tạo tại Đại học Bournemouth, Anh Quốc</li>
+            </ul>
+          </div>
+          <div class="speaker-single-media animate-in delay-2">
+            <div class="speaker-avatar-wrapper">
+              <img src="Ảnh diễn giả/ong-tran-tuan-anh-nghia.png" alt="Ông Trần Tuấn Anh Nghĩa" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: KEYNOTE 2 DIỄN GIẢ 2: ÔNG NGUYỄN PHI HÙNG -->
+      <section class="slide" data-slide-index="10" data-title="Diễn giả Nguyễn Phi Hùng">
+        <div class="speaker-single-layout">
+          <div class="speaker-single-content animate-in delay-1">
+            <div class="badge-pill keynote-badge" style="margin-bottom: 0.5rem;">DIỄN GIẢ · KEYNOTE 02</div>
+            <h2 class="speaker-name">Ông Nguyễn Phi Hùng</h2>
+            <p class="speaker-position">Giám đốc Phát triển sản phẩm Base.vn</p>
+            <div class="speaker-track-tag" style="width: fit-content; margin-top: 0.2rem; margin-bottom: 0.6rem;">People OS</div>
+            <ul class="speaker-bio-list">
+              <li>Top 13 FPT Under 35 2025 – Hạng mục Công nghệ</li>
+              <li>Giải nhất cuộc thi Tin học của Santa Barbara City College</li>
+              <li>7+ năm kinh nghiệm phát triển sản phẩm, công nghệ &amp; AI tại Base.vn</li>
+              <li>Tốt nghiệp xuất sắc của ngành Computer Science tại Đại học California Mỹ</li>
+            </ul>
+          </div>
+          <div class="speaker-single-media animate-in delay-2">
+            <div class="speaker-avatar-wrapper">
+              <img src="Ảnh diễn giả/ong-nguyen-phi-hung.png" alt="Ông Nguyễn Phi Hùng" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: KEYNOTE 2 DIỄN GIẢ 3: ÔNG HOÀNG THANH NGUYỆN -->
+      <section class="slide" data-slide-index="11" data-title="Diễn giả Hoàng Thanh Nguyện">
+        <div class="speaker-single-layout">
+          <div class="speaker-single-content animate-in delay-1">
+            <div class="badge-pill keynote-badge" style="margin-bottom: 0.5rem;">DIỄN GIẢ · KEYNOTE 02</div>
+            <h2 class="speaker-name">Ông Hoàng Thanh Nguyện</h2>
+            <p class="speaker-position">Giám đốc Triển khai chuyển đổi số Base.vn</p>
+            <div class="speaker-track-tag" style="width: fit-content; margin-top: 0.2rem; margin-bottom: 0.6rem;">Sales &amp; Marketing OS</div>
+            <ul class="speaker-bio-list">
+              <li>8+ năm kinh nghiệm đồng hành cùng 600+ doanh nghiệp trong hành trình chuyển đổi số từ sản xuất, bán lẻ đến FDI &amp; khối công</li>
+              <li>Trực tiếp triển khai bài toán quản trị &amp; vận hành quy mô lớn: AMECC, Nhậu Tự Do, Traphaco, Dragon Group, Xi măng Xuân Thành, VTVcab...</li>
+              <li>Thám hoa Trạng FPT 2023</li>
+            </ul>
+          </div>
+          <div class="speaker-single-media animate-in delay-2">
+            <div class="speaker-avatar-wrapper">
+              <img src="Ảnh diễn giả/ong-hoang-thanh-nguyen.png" alt="Ông Hoàng Thanh Nguyện" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: KEYNOTE 2 DIỄN GIẢ 4: ÔNG LÊ BẢO NGỌC -->
+      <section class="slide" data-slide-index="12" data-title="Diễn giả Lê Bảo Ngọc">
+        <div class="speaker-single-layout">
+          <div class="speaker-single-content animate-in delay-1">
+            <div class="badge-pill keynote-badge" style="margin-bottom: 0.5rem;">DIỄN GIẢ · KEYNOTE 02</div>
+            <h2 class="speaker-name">Ông Lê Bảo Ngọc</h2>
+            <p class="speaker-position">Giám đốc Khối khách hàng Doanh Nghiệp vừa và lớn Base.vn</p>
+            <div class="speaker-track-tag" style="width: fit-content; margin-top: 0.2rem; margin-bottom: 0.6rem;">Work OS</div>
+            <ul class="speaker-bio-list">
+              <li>8+ năm kinh nghiệm phụ trách các dự án Chuyển đổi số và ứng dụng AI cho nhiều doanh nghiệp lớn đầu ngành</li>
+              <li>Đồng hành cùng nhiều doanh nghiệp trong top VNR500 &amp; FAST500: Domesco, Boston Pharma, Vemedim, Petrovietnam,...</li>
+              <li>Top 100 FPT (2025) &amp; Top 13 Trạng FPT (2024)</li>
+              <li>Tốt nghiệp MBA Đại Học Khoa Học Ứng Dụng Anhalt, CHLB Đức</li>
+            </ul>
+          </div>
+          <div class="speaker-single-media animate-in delay-2">
+            <div class="speaker-avatar-wrapper">
+              <img src="Ảnh diễn giả/ong-le-bao-ngoc.png" alt="Ông Lê Bảo Ngọc" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 13: KEYNOTE 3 INTRO -->
+      <section class="slide" data-slide-index="13" data-title="Keynote 03: AI Device">
+        <div class="keynote-intro-box">
+          <div class="badge-pill keynote-badge animate-in delay-1">
+            <span class="badge-dot"></span>
+            KEYNOTE 03
+          </div>
+          <h1 class="keynote-intro-title animate-in delay-2">AI Device</h1>
+          <p class="keynote-intro-desc animate-in delay-3">Hoàn thiện kiến trúc vận hành bằng thiết bị AI chuyên biệt</p>
+        </div>
+      </section>
+
+      <!-- SLIDE 14: KEYNOTE 3 DIỄN GIẢ 1: BÀ HÀ VIỆT PHƯƠNG -->
+      <section class="slide" data-slide-index="14" data-title="Diễn giả Hà Việt Phương">
+        <div class="speaker-single-layout">
+          <div class="speaker-single-content animate-in delay-1">
+            <div class="badge-pill keynote-badge" style="margin-bottom: 0.5rem;">DIỄN GIẢ · KEYNOTE 03</div>
+            <h2 class="speaker-name">Bà Hà Việt Phương</h2>
+            <p class="speaker-position">Phó Tổng Giám đốc Base.vn</p>
+            <div class="speaker-track-tag" style="width: fit-content; margin-top: 0.2rem; margin-bottom: 0.6rem;">AI Device · Tự động hóa vận hành</div>
+            <ul class="speaker-bio-list">
+              <li>Đồng sáng lập Base.vn, 10+ năm kinh nghiệm quản trị thực chiến trong lĩnh vực Công nghệ/SaaS</li>
+              <li>Chuyên gia tài chính doanh nghiệp &amp; tự động hóa vận hành cho startup và tập đoàn quy mô lớn</li>
+              <li>Xây dựng và quản trị hệ thống pháp lý, tài chính cho quy mô lớn, thúc đẩy tăng trưởng bền vững</li>
+              <li>Góp phần đưa doanh nghiệp từ $0 lên $10M ARR, phục vụ ~12.000 khách hàng doanh nghiệp và duy trì NRR cao</li>
+            </ul>
+          </div>
+          <div class="speaker-single-media animate-in delay-2">
+            <div class="speaker-avatar-wrapper">
+              <img src="Ảnh diễn giả/ba-ha-viet-phuong.png" alt="Bà Hà Việt Phương" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 15: KEYNOTE 3 DIỄN GIẢ 2: BÀ NGUYỄN KIM CÚC -->
+      <section class="slide" data-slide-index="15" data-title="Diễn giả Nguyễn Kim Cúc">
+        <div class="speaker-single-layout">
+          <div class="speaker-single-content animate-in delay-1">
+            <div class="badge-pill keynote-badge" style="margin-bottom: 0.5rem;">DIỄN GIẢ · KEYNOTE 03</div>
+            <h2 class="speaker-name">Bà Nguyễn Kim Cúc</h2>
+            <p class="speaker-position">Giám đốc Tư vấn chuyển đổi số Base.vn</p>
+            <div class="speaker-track-tag" style="width: fit-content; margin-top: 0.2rem; margin-bottom: 0.6rem;">AI Device · Tư vấn chuyển đổi số</div>
+            <ul class="speaker-bio-list">
+              <li>Người đặt nền móng cho Base.vn tại thị trường miền Nam, 10+ năm kinh nghiệm Sales B2B trong lĩnh vực công nghệ</li>
+              <li>Đồng hành cùng +500 doanh nghiệp lớn: Vietjet Air, Long Châu &amp; FPT Shop (FPT Retail), GS25, Sovico, Hoa Lâm, Tân Cảng Sài Gòn, Cao Su Việt Nam...</li>
+              <li>Chuyên gia tư vấn chiến lược ứng dụng công nghệ và triển khai thiết bị AI trong vận hành chuỗi &amp; doanh nghiệp lớn</li>
+              <li>Top 13 FPT Under 35 (2026)</li>
+            </ul>
+          </div>
+          <div class="speaker-single-media animate-in delay-2">
+            <div class="speaker-avatar-wrapper">
+              <img src="Ảnh diễn giả/ba-nguyen-kim-cuc.png" alt="Bà Nguyễn Kim Cúc" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 16: KEYNOTE 4 INTRO -->
+      <section class="slide" data-slide-index="16" data-title="Keynote 04: Agent Architecture &amp; AI Model Research Project">
+        <div class="keynote-intro-box">
+          <div class="badge-pill keynote-badge animate-in delay-1">
+            <span class="badge-dot"></span>
+            KEYNOTE 04
+          </div>
+          <h1 class="keynote-intro-title animate-in delay-2">Agent Architecture &amp; AI Model Research Project</h1>
+          <p class="keynote-intro-desc animate-in delay-3">Mô hình trí tuệ nhân tạo chuyên biệt &amp; Kiến trúc tác tử tự hành</p>
+        </div>
+      </section>
+
+      <!-- SLIDE 17: KEYNOTE 4 DIỄN GIẢ: TS TRIỆU HẢI LONG -->
+      <section class="slide" data-slide-index="17" data-title="Diễn giả Triệu Hải Long">
+        <div class="speaker-single-layout">
+          <div class="speaker-single-content animate-in delay-1">
+            <div class="badge-pill keynote-badge" style="margin-bottom: 0.5rem;">DIỄN GIẢ · KEYNOTE 04</div>
+            <h2 class="speaker-name">TS. Triệu Hải Long</h2>
+            <p class="speaker-position">Chuyên gia cao cấp Đại học Cambridge · Viện Trí tuệ Nhân tạo</p>
+            <div class="speaker-track-tag" style="width: fit-content; margin-top: 0.2rem; margin-bottom: 0.6rem;">4.1 AI Model Research Project</div>
+            <ul class="speaker-bio-list">
+              <li>Hơn 10 năm kinh nghiệm nghiên cứu và phát triển AI chuyên sâu: Large Language Models (LLMs), AI Agents, Foundation Models, NLP, Chatbots</li>
               <li>Giảng viên, nghiên cứu viên Viện Trí tuệ Nhân tạo - ĐH Công Nghệ, ĐHQGHN</li>
-              <li>Từng nghiên cứu tại The University of Manchester (Anh) và AIST (Nhật Bản)</li>
+              <li>Từng nghiên cứu tại The University of Manchester (Anh Quốc) và AIST (Nhật Bản)</li>
               <li>Tiến sĩ Khoa học Máy tính, Japan Advanced Institute of Science and Technology (JAIST)</li>
             </ul>
           </div>
@@ -421,66 +588,6 @@
               <img src="Ảnh diễn giả/ong-trieu-hai-long.png" alt="TS. Triệu Hải Long" loading="lazy">
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- SLIDE 10: KEYNOTE 3 INTRO -->
-      <section class="slide" data-slide-index="10" data-title="Keynote 03: AI Device">
-        <div class="keynote-intro-box">
-          <div class="badge-pill keynote-badge animate-in delay-1">
-            <span class="badge-dot"></span>
-            KEYNOTE 03
-          </div>
-          <h1 class="keynote-intro-title animate-in delay-2">AI Device</h1>
-          <p class="keynote-intro-desc animate-in delay-3">Hoàn thiện kiến trúc vận hành bằng thiết bị AI</p>
-        </div>
-      </section>
-
-      <!-- SLIDE 11: KEYNOTE 3 DIỄN GIẢ: 2 COLS -->
-      <section class="slide" data-slide-index="11" data-title="Diễn giả Keynote 03">
-        <div class="slide-title-header animate-in delay-1" style="margin-bottom: 1.5rem;">
-          <div class="badge-pill keynote-badge" style="margin-bottom: 0.5rem;">DIỄN GIẢ · KEYNOTE 03</div>
-        </div>
-        <div class="speakers-grid-2 animate-in delay-2">
-          <!-- Col 1: Bà Hà Việt Phương -->
-          <div class="speaker-card-col">
-            <div class="speaker-col-avatar">
-              <img src="Ảnh diễn giả/ba-ha-viet-phuong.png" alt="Bà Hà Việt Phương" loading="lazy">
-            </div>
-            <h3 class="speaker-col-name">Bà Hà Việt Phương</h3>
-            <p class="speaker-col-title">Phó Tổng Giám đốc Base.vn<br><span style="color:#94a3b8; font-weight:400; font-size:0.9em;">Chuyên gia tài chính doanh nghiệp & tự động hóa vận hành</span></p>
-            <ul class="speaker-col-bullets">
-              <li>Đồng sáng lập Base.vn, 10+ năm kinh nghiệm quản trị thực chiến trong lĩnh vực Công nghệ/SaaS</li>
-              <li>Xây dựng và quản trị hệ thống pháp lý, tài chính cho startup quy mô lớn, tăng trưởng hiệu quả</li>
-              <li>Góp phần đưa doanh nghiệp từ $0 lên $10M ARR, phục vụ ~12.000 khách hàng doanh nghiệp và duy trì NRR cao</li>
-            </ul>
-          </div>
-
-          <!-- Col 2: Bà Nguyễn Kim Cúc -->
-          <div class="speaker-card-col">
-            <div class="speaker-col-avatar">
-              <img src="Ảnh diễn giả/ba-nguyen-kim-cuc.png" alt="Bà Nguyễn Kim Cúc" loading="lazy">
-            </div>
-            <h3 class="speaker-col-name">Bà Nguyễn Kim Cúc</h3>
-            <p class="speaker-col-title">Giám đốc Tư vấn chuyển đổi số Base.vn<br><span style="color:#94a3b8; font-weight:400; font-size:0.9em;">Người đặt nền móng cho Base.vn tại thị trường miền Nam</span></p>
-            <ul class="speaker-col-bullets">
-              <li>10+ năm kinh nghiệm Sales B2B trong lĩnh vực công nghệ</li>
-              <li>Đồng hành cùng +500 doanh nghiệp lớn: Vietjet Air, Long Châu & FPT Shop (FPT Retail), GS25, Sovico, Hoa Lâm, Tân Cảng Sài Gòn, Cao Su Việt Nam...</li>
-              <li>Top 13 FPT Under 35 (2026)</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- SLIDE 12: KEYNOTE 4 INTRO -->
-      <section class="slide" data-slide-index="12" data-title="Keynote 04: Universe of Work">
-        <div class="keynote-intro-box">
-          <div class="badge-pill keynote-badge animate-in delay-1">
-            <span class="badge-dot"></span>
-            KEYNOTE 04
-          </div>
-          <h1 class="keynote-intro-title animate-in delay-2">Universe of Work</h1>
-          <p class="keynote-intro-desc animate-in delay-3">Hệ sinh thái vận hành đa doanh nghiệp</p>
         </div>
       </section>
 
@@ -503,9 +610,9 @@
             <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
           </button>
           <div class="dock-slide-counter">
-            <span id="currentSlideNum">1</span> / <span id="totalSlidesNum">12</span>
+            <span id="currentSlideNum">1</span> / <span id="totalSlidesNum">17</span>
           </div>
-          <span class="dock-title" id="currentSlideTitle">Đối tác đồng hành</span>
+          <span class="dock-title" id="currentSlideTitle">Diễn giả Phùng Thị Hải Hà</span>
         </div>
 
         <div class="dock-center">
@@ -515,12 +622,24 @@
             <kbd class="kbd-badge">→</kbd>
             <kbd class="kbd-badge">Space</kbd>
             <span style="opacity:0.35; margin:0 4px;">|</span>
+            <kbd class="kbd-badge">R</kbd>
+            <span>Kích thước màn</span>
+            <span style="opacity:0.35; margin:0 4px;">|</span>
             <kbd class="kbd-badge">H</kbd>
             <span>Ẩn / Hiện</span>
           </div>
         </div>
 
         <div class="dock-right">
+          <!-- Screen Ratio Control Button in Dock -->
+          <div class="led-ratio-wrapper" id="ledRatioWrapper">
+            <button class="dock-btn led-ratio-btn" id="btnOpenScreenModal" title="Bảng điều khiển kích thước màn (Phím R)" aria-haspopup="dialog">
+              <svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
+              <span class="led-ratio-btn-label">Màn hình:</span>
+              <span class="led-ratio-tag" id="ledRatioTag">16:9</span>
+            </button>
+          </div>
+
           <button class="dock-btn" id="btnOverview" title="Tổng quan các slide (Phím O)">
             <svg viewBox="0 0 24 24"><path d="M4 11h5V5H4v6zm0 7h5v-6H4v6zm6 0h5v-6h-5v6zm6 0h5v-6h-5v6zm-6-7h5V5h-5v6zm6-6v6h5V5h-5z"/></svg>
           </button>
@@ -539,10 +658,37 @@
       <span>Ấn</span> <kbd class="kbd-badge">H</kbd> <span>hiện điều khiển</span>
     </div>
 
+    <!-- Screen Ratio & LED Control Panel Modal -->
+    <div id="screenRatioModal" class="screen-ratio-modal" role="dialog" aria-modal="true" aria-label="Bảng điều khiển kích thước màn trình chiếu">
+      <div class="screen-ratio-modal-container">
+        <div class="screen-ratio-modal-header">
+          <div class="screen-ratio-modal-title-group">
+            <div class="badge-pill keynote-badge" style="margin-bottom: 4px; font-size: 0.72rem; padding: 2px 10px;">SETUP SÂN KHẤU &amp; MÀN CHIẾU</div>
+            <h2 class="screen-ratio-modal-title">Bảng Điều Khiển Kích Thước Màn Trình Chiếu</h2>
+            <p class="screen-ratio-modal-desc">Chọn tỷ lệ khung hình phù hợp với kích thước màn LED sân khấu hoặc máy chiếu thực tế</p>
+          </div>
+          <button class="screen-ratio-close-btn" id="btnCloseScreenRatio" aria-label="Đóng bảng điều khiển">&times;</button>
+        </div>
+
+        <div class="screen-ratio-modal-body" id="screenRatioBody">
+          <!-- Rendered dynamically from SCREEN_RATIO_PRESETS in app.js -->
+        </div>
+
+        <div class="screen-ratio-modal-footer">
+          <div class="screen-ratio-footer-hint">
+            <kbd class="kbd-badge">R</kbd> <span style="margin-left: 4px;">Chuyển nhanh tỷ lệ tiếp theo</span>
+            <span style="opacity: 0.35; margin: 0 8px;">|</span>
+            <kbd class="kbd-badge">Esc</kbd> <span style="margin-left: 4px;">Đóng bảng điều khiển</span>
+          </div>
+          <button class="screen-ratio-apply-btn" id="btnApplyScreenRatio">Đóng bảng điều khiển</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Overview Modal (Grid Mode) -->
     <div id="overviewModal" class="overview-modal" role="dialog" aria-modal="true" aria-label="Tổng quan tất cả Slide">
       <div class="overview-header">
-        <h2 class="overview-title">Tổng quan 12 Slide Sự Kiện</h2>
+        <h2 class="overview-title">Tổng quan 17 Slide Sự Kiện</h2>
         <button class="overview-close-btn" id="btnCloseOverview" aria-label="Đóng tổng quan">&times;</button>
       </div>
       <div class="overview-grid" id="overviewGrid">

@@ -1,6 +1,119 @@
-/**
- * Enterprise AI Summit 2026 - Slide Presentation Engine
- */
+// Multi-Screen Ratio & Stage LED Presets
+const SCREEN_RATIO_PRESETS = [
+  // Màn hình LED sân khấu sự kiện
+  {
+    id: '9:4.5',
+    category: 'led',
+    categoryName: 'Màn hình LED Sân khấu',
+    name: '9 × 4.5 m',
+    ratioClass: 'ratio-9-45',
+    ratioNum: 2 / 1,
+    ratioText: '2 : 1',
+    desc: 'Màn LED sân khấu chuẩn (Base Summit)',
+    res: '3840 × 1920 / 1920 × 960'
+  },
+  {
+    id: '9:3',
+    category: 'led',
+    categoryName: 'Màn hình LED Sân khấu',
+    name: '9 × 3 m',
+    ratioClass: 'ratio-9-3',
+    ratioNum: 3 / 1,
+    ratioText: '3 : 1',
+    desc: 'Màn LED siêu rộng Panorama Keynote',
+    res: '3840 × 1280 / 1920 × 640'
+  },
+  {
+    id: '12:4',
+    category: 'led',
+    categoryName: 'Màn hình LED Sân khấu',
+    name: '12 × 4 m',
+    ratioClass: 'ratio-12-4',
+    ratioNum: 3 / 1,
+    ratioText: '3 : 1',
+    desc: 'Màn LED đại sảnh & Hội nghị lớn',
+    res: '3840 × 1280 / 2880 × 960'
+  },
+  {
+    id: '8:4',
+    category: 'led',
+    categoryName: 'Màn hình LED Sân khấu',
+    name: '8 × 4 m',
+    ratioClass: 'ratio-8-4',
+    ratioNum: 2 / 1,
+    ratioText: '2 : 1',
+    desc: 'Màn LED sự kiện vừa & Khách sạn',
+    res: '1920 × 960 / 2560 × 1280'
+  },
+  {
+    id: '10:4',
+    category: 'led',
+    categoryName: 'Màn hình LED Sân khấu',
+    name: '10 × 4 m',
+    ratioClass: 'ratio-10-4',
+    ratioNum: 2.5 / 1,
+    ratioText: '2.5 : 1',
+    desc: 'Màn LED sân khấu rộng tầm trung',
+    res: '2560 × 1024 / 3840 × 1536'
+  },
+  {
+    id: '12:5',
+    category: 'led',
+    categoryName: 'Màn hình LED Sân khấu',
+    name: '12 × 5 m',
+    ratioClass: 'ratio-12-5',
+    ratioNum: 2.4 / 1,
+    ratioText: '2.4 : 1',
+    desc: 'Màn LED ngang hội trường lớn',
+    res: '2880 × 1200 / 3840 × 1600'
+  },
+
+  // Màn hình tiêu chuẩn & máy chiếu
+  {
+    id: '16:9',
+    category: 'standard',
+    categoryName: 'Màn hình tiêu chuẩn & Máy chiếu',
+    name: '16 : 9',
+    ratioClass: 'ratio-16-9',
+    ratioNum: 16 / 9,
+    ratioText: '16 : 9',
+    desc: 'Chuẩn Full HD, 4K, Smart TV, Máy chiếu',
+    res: '1920 × 1080 / 3840 × 2160'
+  },
+  {
+    id: '16:10',
+    category: 'standard',
+    categoryName: 'Màn hình tiêu chuẩn & Máy chiếu',
+    name: '16 : 10',
+    ratioClass: 'ratio-16-10',
+    ratioNum: 16 / 10,
+    ratioText: '16 : 10',
+    desc: 'Laptop, MacBook, Máy chiếu WUXGA',
+    res: '1920 × 1200 / 2560 × 1600'
+  },
+  {
+    id: '21:9',
+    category: 'standard',
+    categoryName: 'Màn hình tiêu chuẩn & Máy chiếu',
+    name: '21 : 9',
+    ratioClass: 'ratio-21-9',
+    ratioNum: 21 / 9,
+    ratioText: '2.33 : 1',
+    desc: 'Màn hình máy tính Siêu rộng (Ultra-Wide)',
+    res: '2560 × 1080 / 3440 × 1440'
+  },
+  {
+    id: '4:3',
+    category: 'standard',
+    categoryName: 'Màn hình tiêu chuẩn & Máy chiếu',
+    name: '4 : 3',
+    ratioClass: 'ratio-4-3',
+    ratioNum: 4 / 3,
+    ratioText: '4 : 3',
+    desc: 'Màn chiếu truyền thống, Hội thảo cổ điển',
+    res: '1024 × 768 / 1600 × 1200'
+  }
+];
 
 class PresentationApp {
   constructor() {
@@ -33,6 +146,18 @@ class PresentationApp {
     this.touchStartX = 0;
     this.touchEndX = 0;
     this.isOverviewOpen = false;
+
+    // Screen Ratio & LED Control Panel Properties
+    this.STORAGE_KEY_RATIO = 'summit2026_led_ratio';
+    this.currentRatio = '16:9';
+    this.slidesViewport = document.getElementById('slidesViewport');
+    this.btnOpenScreenModal = document.getElementById('btnOpenScreenModal');
+    this.screenRatioModal = document.getElementById('screenRatioModal');
+    this.btnCloseScreenRatio = document.getElementById('btnCloseScreenRatio');
+    this.btnApplyScreenRatio = document.getElementById('btnApplyScreenRatio');
+    this.ledRatioTag = document.getElementById('ledRatioTag');
+    this.isScreenRatioModalOpen = false;
+    this.toastTimer = null;
 
     // Auto-hide dock properties (2 seconds)
     this.autoHideTimer = null;
@@ -80,17 +205,44 @@ class PresentationApp {
     if (savedIndex > 1) {
       this.showToast(savedIndex);
     }
+
+    // Restore LED Ratio (16:9, 9:4.5, 9:3, etc.)
+    let savedRatio = '16:9';
+    const ratioParam = urlParams.get('ratio');
+    if (ratioParam) {
+      const match = SCREEN_RATIO_PRESETS.find(p => p.id === ratioParam || p.ratioClass === `ratio-${ratioParam.replace(':', '-')}`);
+      if (match) {
+        savedRatio = match.id;
+      } else if (ratioParam === '9-45' || ratioParam === '9:4.5' || ratioParam === '9x4.5' || ratioParam === '9x4,5') {
+        savedRatio = '9:4.5';
+      } else if (ratioParam === '9-3' || ratioParam === '9:3' || ratioParam === '9x3') {
+        savedRatio = '9:3';
+      }
+    } else {
+      try {
+        const storedRatio = localStorage.getItem(this.STORAGE_KEY_RATIO);
+        if (storedRatio && SCREEN_RATIO_PRESETS.some(p => p.id === storedRatio)) {
+          savedRatio = storedRatio;
+        }
+      } catch (e) {}
+    }
+    this.setLedRatio(savedRatio, true);
   }
 
-  showToast(slideNum) {
+  showToast(messageOrSlideNum) {
     if (!this.toastNotice) return;
-    if (this.restoredSlideNumEl) {
-      this.restoredSlideNumEl.textContent = slideNum;
+    const toastMsgEl = document.getElementById('toastMessage');
+    if (typeof messageOrSlideNum === 'number') {
+      if (this.restoredSlideNumEl) this.restoredSlideNumEl.textContent = messageOrSlideNum;
+      if (toastMsgEl) toastMsgEl.innerHTML = `Đã khôi phục tiến độ slide <strong>${messageOrSlideNum}</strong>`;
+    } else if (typeof messageOrSlideNum === 'string') {
+      if (toastMsgEl) toastMsgEl.innerHTML = messageOrSlideNum;
     }
     this.toastNotice.classList.add('show');
-    setTimeout(() => {
+    clearTimeout(this.toastTimer);
+    this.toastTimer = setTimeout(() => {
       this.toastNotice.classList.remove('show');
-    }, 3800);
+    }, 2800);
   }
 
   saveProgress(index) {
@@ -129,6 +281,13 @@ class PresentationApp {
     const activeSlide = this.slides[this.currentIndex - 1];
     if (activeSlide && activeSlide.classList.contains('slide-metrics')) {
       this.animateMetrics();
+    }
+
+    // Slide 5: Ensure all agenda blocks start collapsed, open only on click
+    if (activeSlide && activeSlide.classList.contains('slide-agenda')) {
+      document.querySelectorAll('.agenda-block').forEach(b => {
+        b.classList.remove('expanded');
+      });
     }
   }
 
@@ -187,21 +346,20 @@ class PresentationApp {
   }
 
   animateMetrics() {
-    const cards = document.querySelectorAll('.slide.slide-metrics .metric-card');
-    cards.forEach((card, idx) => {
-      card.classList.remove('counted-finished');
-      const el = card.querySelector('.metric-number');
-      if (!el) return;
+    const activeSlide = this.slides[this.currentIndex - 1];
+    if (!activeSlide) return;
 
+    const metricEls = activeSlide.querySelectorAll('[data-target]');
+    metricEls.forEach((el, idx) => {
+      el.classList.remove('counted-finished');
       const targetStr = el.getAttribute('data-target');
       if (!targetStr) return;
 
       const suffix = el.getAttribute('data-suffix') || '';
       const separator = el.getAttribute('data-separator') || null;
       const targetVal = parseFloat(targetStr);
-      // Slight stagger per card
-      const cardDelay = idx * 100;
-      const duration = 1400;
+      const cardDelay = idx * 120;
+      const duration = 1500;
 
       const formatNum = (val) => {
         const rounded = Math.floor(val);
@@ -220,7 +378,6 @@ class PresentationApp {
         const updateVal = (now) => {
           const elapsed = now - startTime;
           const progress = Math.min(elapsed / duration, 1);
-          // easeOutCubic
           const ease = 1 - Math.pow(1 - progress, 3);
           const currentVal = ease * targetVal;
 
@@ -230,7 +387,7 @@ class PresentationApp {
             requestAnimationFrame(updateVal);
           } else {
             el.textContent = formatNum(targetVal);
-            card.classList.add('counted-finished');
+            el.classList.add('counted-finished');
           }
         };
 
@@ -261,6 +418,122 @@ class PresentationApp {
 
       this.overviewGrid.appendChild(card);
     });
+  }
+
+  buildScreenRatioModal() {
+    const container = document.getElementById('screenRatioBody');
+    if (!container) return;
+    container.innerHTML = '';
+
+    const categories = [
+      { id: 'led', title: '🎪 MÀN HÌNH LED SÂN KHẤU SỰ KIỆN' },
+      { id: 'standard', title: '🖥️ MÀN HÌNH TIÊU CHUẨN & MÁY CHIẾU' }
+    ];
+
+    categories.forEach(cat => {
+      const section = document.createElement('div');
+      section.className = 'screen-ratio-section';
+      section.innerHTML = `<div class="screen-ratio-section-title">${cat.title}</div>`;
+
+      const grid = document.createElement('div');
+      grid.className = 'screen-ratio-grid';
+
+      const items = SCREEN_RATIO_PRESETS.filter(p => p.category === cat.id);
+      items.forEach(preset => {
+        const card = document.createElement('div');
+        const isActive = this.currentRatio === preset.id;
+        card.className = `screen-ratio-card ${isActive ? 'active' : ''}`;
+        card.setAttribute('data-ratio', preset.id);
+
+        // Calculate proportional visual box (base width 48px)
+        const boxW = 48;
+        const boxH = Math.max(14, Math.min(36, Math.round(boxW / preset.ratioNum)));
+
+        card.innerHTML = `
+          <div class="screen-shape-box" title="Tỷ lệ: ${preset.ratioText}">
+            <div class="screen-shape-inner" style="width: ${boxW}px; height: ${boxH}px;"></div>
+          </div>
+          <div class="screen-ratio-info">
+            <div class="screen-ratio-topline">
+              <span class="screen-ratio-name">${preset.name}</span>
+              <span class="screen-ratio-pill">${preset.ratioText}</span>
+            </div>
+            <div class="screen-ratio-card-desc">${preset.desc}</div>
+            <div class="screen-ratio-card-res">${preset.res}</div>
+          </div>
+          <div class="screen-ratio-check">
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          </div>
+        `;
+
+        card.addEventListener('click', () => {
+          this.setLedRatio(preset.id);
+        });
+
+        grid.appendChild(card);
+      });
+
+      section.appendChild(grid);
+      container.appendChild(section);
+    });
+  }
+
+  toggleScreenRatioModal(forceState) {
+    if (!this.screenRatioModal) return;
+    this.isScreenRatioModalOpen = typeof forceState === 'boolean' 
+      ? forceState 
+      : !this.isScreenRatioModalOpen;
+
+    if (this.isScreenRatioModalOpen) {
+      if (this.isOverviewOpen) this.toggleOverview(false);
+      this.buildScreenRatioModal();
+      this.screenRatioModal.classList.add('active');
+    } else {
+      this.screenRatioModal.classList.remove('active');
+    }
+  }
+
+  setLedRatio(ratioId, isInitial = false) {
+    const preset = SCREEN_RATIO_PRESETS.find(p => p.id === ratioId) || SCREEN_RATIO_PRESETS.find(p => p.id === '16:9');
+    this.currentRatio = preset.id;
+
+    try {
+      localStorage.setItem(this.STORAGE_KEY_RATIO, preset.id);
+    } catch (e) {
+      console.warn('LocalStorage error:', e);
+    }
+
+    if (this.slidesViewport) {
+      // Remove all ratio classes
+      SCREEN_RATIO_PRESETS.forEach(p => {
+        this.slidesViewport.classList.remove(p.ratioClass);
+      });
+      this.slidesViewport.classList.add(preset.ratioClass);
+    }
+
+    if (this.ledRatioTag) {
+      this.ledRatioTag.textContent = preset.name;
+    }
+
+    // Update active card if modal is open
+    document.querySelectorAll('.screen-ratio-card').forEach(card => {
+      if (card.getAttribute('data-ratio') === preset.id) {
+        card.classList.add('active');
+      } else {
+        card.classList.remove('active');
+      }
+    });
+
+    if (!isInitial) {
+      this.showToast(`Đã chuyển sang: <strong>${preset.name} (${preset.ratioText})</strong>`);
+    }
+  }
+
+  cycleLedRatio() {
+    const cycleList = ['16:9', '9:4.5', '9:3', '12:4', '10:4', '21:9', '16:10', '4:3'];
+    const currIdx = cycleList.indexOf(this.currentRatio);
+    const nextRatio = cycleList[(currIdx + 1) % cycleList.length];
+    this.setLedRatio(nextRatio);
   }
 
   toggleOverview(forceState) {
@@ -364,6 +637,15 @@ class PresentationApp {
 
     // Keyboard Navigation
     window.addEventListener('keydown', (e) => {
+      // If screen ratio modal is open, handle Esc
+      if (this.isScreenRatioModalOpen) {
+        if (e.key === 'Escape' || e.key === 'm' || e.key === 'M') {
+          this.toggleScreenRatioModal(false);
+          e.preventDefault();
+        }
+        return;
+      }
+
       // If overview is open, handle Esc
       if (this.isOverviewOpen) {
         if (e.key === 'Escape' || e.key === 'o' || e.key === 'O') {
@@ -379,6 +661,18 @@ class PresentationApp {
         case 'H':
           e.preventDefault();
           this.toggleDock();
+          break;
+
+        case 'r':
+        case 'R':
+          e.preventDefault();
+          this.cycleLedRatio();
+          break;
+
+        case 'm':
+        case 'M':
+          e.preventDefault();
+          this.toggleScreenRatioModal();
           break;
 
         case 'ArrowRight':
@@ -437,6 +731,35 @@ class PresentationApp {
     if (this.btnOverview) this.btnOverview.addEventListener('click', () => this.toggleOverview());
     if (this.btnCloseOverview) this.btnCloseOverview.addEventListener('click', () => this.toggleOverview(false));
     if (this.btnResetProgress) this.btnResetProgress.addEventListener('click', () => this.resetProgress());
+
+    // Screen ratio modal controls
+    if (this.btnOpenScreenModal) {
+      this.btnOpenScreenModal.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.toggleScreenRatioModal();
+      });
+    }
+
+    if (this.btnCloseScreenRatio) {
+      this.btnCloseScreenRatio.addEventListener('click', () => {
+        this.toggleScreenRatioModal(false);
+      });
+    }
+
+    if (this.btnApplyScreenRatio) {
+      this.btnApplyScreenRatio.addEventListener('click', () => {
+        this.toggleScreenRatioModal(false);
+      });
+    }
+
+    // Close on backdrop click
+    if (this.screenRatioModal) {
+      this.screenRatioModal.addEventListener('click', (e) => {
+        if (e.target === this.screenRatioModal) {
+          this.toggleScreenRatioModal(false);
+        }
+      });
+    }
 
     // Progress bar scrubber click
     if (this.progressBarContainer) {
