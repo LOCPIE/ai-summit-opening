@@ -5,8 +5,206 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enterprise AI Summit 2026 - Trình Chiếu Keynote</title>
   <meta name="description" content="Website trình chiếu slide Enterprise AI Summit 2026 - Hà Nội 17.09.2026">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22><text y=%2226%22 font-size=%2224%22>🚀</text></svg>">
+  <style>
+    /* Slide 4: Hàng 3 chặng trên 1 đường thẳng + đường chạy */
+    .journey-track-row {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      width: 100% !important;
+      max-width: 1360px !important;
+      margin: 0 auto 30px !important;
+      position: relative !important;
+      z-index: 5 !important;
+      box-sizing: border-box !important;
+    }
+    .track-stage {
+      flex-shrink: 0 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      opacity: 0;
+      transform: scale(0.9) translateY(4px);
+    }
+    .stage-pill {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 10px !important;
+      padding: 9px 24px !important;
+      background: rgba(12, 34, 96, 0.94) !important;
+      border: 1.5px solid rgba(56, 189, 248, 0.55) !important;
+      border-radius: 9999px !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      box-shadow: 0 0 22px rgba(56, 189, 248, 0.28) !important;
+      color: #e0f2fe !important;
+      font-size: clamp(0.78rem, 0.92vw, 1.02rem) !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.08em !important;
+      text-transform: uppercase !important;
+      text-align: center !important;
+      white-space: nowrap !important;
+    }
+    .stage-pill.header-gold {
+      background: rgba(26, 36, 80, 0.96) !important;
+      border-color: rgba(250, 204, 21, 0.75) !important;
+      box-shadow: 0 0 26px rgba(250, 204, 21, 0.38) !important;
+      color: #fef08a !important;
+    }
+    .stage-glow-dot {
+      width: 9px !important;
+      height: 9px !important;
+      border-radius: 50% !important;
+      flex-shrink: 0 !important;
+    }
+    .stage-glow-dot.dot-cyan {
+      background: #38bdf8 !important;
+      box-shadow: 0 0 10px #38bdf8, 0 0 18px rgba(56, 189, 248, 0.9) !important;
+    }
+    .stage-glow-dot.dot-blue {
+      background: #60a5fa !important;
+      box-shadow: 0 0 10px #60a5fa, 0 0 18px rgba(96, 165, 250, 0.9) !important;
+    }
+    .stage-glow-dot.dot-gold {
+      background: #facc15 !important;
+      box-shadow: 0 0 10px #facc15, 0 0 22px rgba(250, 204, 21, 0.95) !important;
+    }
+    .track-runner {
+      flex: 1 1 auto !important;
+      min-width: 40px !important;
+      height: 28px !important;
+      margin: 0 10px !important;
+      display: flex !important;
+      align-items: center !important;
+      position: relative !important;
+    }
+    .runner-svg {
+      width: 100% !important;
+      height: 28px !important;
+      overflow: visible !important;
+    }
+    .runner-svg .rail-line {
+      stroke: rgba(56, 189, 248, 0.25);
+      stroke-width: 2.5;
+      stroke-dasharray: 4 4;
+    }
+    .runner-svg .laser-line {
+      stroke-width: 3.5;
+      stroke-linecap: round;
+      stroke-dasharray: 230;
+      stroke-dashoffset: 230;
+      opacity: 0;
+    }
+    .laser-line.laser-hn-hcm {
+      filter: drop-shadow(0 0 6px #38bdf8);
+    }
+    .laser-line.laser-hcm-dn {
+      filter: drop-shadow(0 0 6px #facc15);
+    }
+    .runner-svg .stream-line {
+      stroke-width: 3.5;
+      stroke-linecap: round;
+      stroke-dasharray: 14 18;
+      opacity: 0;
+    }
+    .stream-line.stream-cyan {
+      stroke: #38bdf8;
+      filter: drop-shadow(0 0 8px #38bdf8);
+    }
+    .stream-line.stream-gold {
+      stroke: #facc15;
+      filter: drop-shadow(0 0 8px #facc15);
+    }
+    .runner-svg .runner-arrow {
+      opacity: 0;
+    }
+    .runner-arrow.arrow-cyan {
+      fill: #38bdf8;
+      filter: drop-shadow(0 0 6px #38bdf8);
+    }
+    .runner-arrow.arrow-gold {
+      fill: #facc15;
+      filter: drop-shadow(0 0 6px #facc15);
+    }
+    .slide.active .stage-hn {
+      animation: stagePillAppear 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards,
+                 pillHanoiFlash 0.75s ease-out 0.4s both;
+    }
+    .slide.active .laser-hn-hcm {
+      opacity: 1;
+      animation: drawLaserLine 0.75s cubic-bezier(0.25, 0.1, 0.25, 1) 0.7s forwards;
+    }
+    .slide.active .runner-hn-hcm .runner-arrow {
+      animation: arrowPop 0.3s ease-out 1.35s forwards;
+    }
+    .slide.active .stream-cyan {
+      animation: streamFlowCyan 1.2s linear infinite 1.4s,
+                 streamFadeIn 0.4s ease-out 1.4s forwards;
+    }
+    .slide.active .stage-hcm {
+      animation: stagePillAppear 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) 1.45s forwards,
+                 pillHcmFlash 0.75s ease-out 1.65s both;
+    }
+    .slide.active .laser-hcm-dn {
+      opacity: 1;
+      animation: drawLaserLine 0.75s cubic-bezier(0.25, 0.1, 0.25, 1) 2.0s forwards;
+    }
+    .slide.active .runner-hcm-dn .runner-arrow {
+      animation: arrowPop 0.3s ease-out 2.65s forwards;
+    }
+    .slide.active .stream-gold {
+      animation: streamFlowGold 1.2s linear infinite 2.7s,
+                 streamFadeIn 0.4s ease-out 2.7s forwards;
+    }
+    .slide.active .stage-dn {
+      animation: stagePillAppear 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) 2.75s forwards,
+                 pillDanangFlash 0.85s ease-out 2.95s both;
+    }
+    @keyframes stagePillAppear {
+      0% { opacity: 0; transform: scale(0.85) translateY(6px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    @keyframes drawLaserLine {
+      0% { stroke-dashoffset: 230; opacity: 0.6; }
+      100% { stroke-dashoffset: 0; opacity: 1; }
+    }
+    @keyframes arrowPop {
+      0% { opacity: 0; transform: scale(0.6); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes streamFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes streamFlowCyan {
+      0% { stroke-dashoffset: 64; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes streamFlowGold {
+      0% { stroke-dashoffset: 64; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes pillHanoiFlash {
+      0% { transform: scale(0.96); box-shadow: 0 0 15px rgba(56, 189, 248, 0.2); }
+      50% { transform: scale(1.05); border-color: #38bdf8; box-shadow: 0 0 35px rgba(56, 189, 248, 0.85), 0 0 60px rgba(56, 189, 248, 0.45); }
+      100% { transform: scale(1); box-shadow: 0 0 22px rgba(56, 189, 248, 0.35); }
+    }
+    @keyframes pillHcmFlash {
+      0% { transform: scale(0.96); box-shadow: 0 0 15px rgba(96, 165, 250, 0.2); }
+      50% { transform: scale(1.05); border-color: #60a5fa; box-shadow: 0 0 35px rgba(96, 165, 250, 0.85), 0 0 60px rgba(96, 165, 250, 0.45); }
+      100% { transform: scale(1); box-shadow: 0 0 22px rgba(96, 165, 250, 0.35); }
+    }
+    @keyframes pillDanangFlash {
+      0% { transform: scale(0.96); box-shadow: 0 0 15px rgba(250, 204, 21, 0.2); }
+      50% { transform: scale(1.06); border-color: #facc15; box-shadow: 0 0 38px rgba(250, 204, 21, 0.9), 0 0 65px rgba(250, 204, 21, 0.5); }
+      100% { transform: scale(1); box-shadow: 0 0 24px rgba(250, 204, 21, 0.4); }
+    }
+  </style>
 </head>
 <body>
 
@@ -107,7 +305,7 @@
         </div>
       </section>
 
-            <!-- SLIDE 4: DẤU ẤN LAN TỎA (HÀ NỘI & HCM TỔNG HỢP THEO ẢNH MẪU) -->
+            <!-- SLIDE 4: DẤU ẤN LAN TỎA (HÀ NỘI · HCM · ĐÀ NẴNG) -->
       <section class="slide slide-journey-dark" data-slide-index="4" data-title="Dấu ấn lan tỏa">
         <div class="journey-dual-container">
           
@@ -117,81 +315,71 @@
             <div class="journey-exact-underline"></div>
           </div>
 
-          <!-- Journey Connect Line & Stage Badges Container -->
-          <div class="journey-line-track-wrapper">
+          <!-- HÀNG 3 CHẶNG TRÊN 1 ĐƯỜNG THẲNG: HN -> HCM -> ĐN VỚI ĐƯỜNG CHẠY NĂNG LƯỢNG -->
+          <div class="journey-track-row">
             
-            <!-- Animated SVG Connecting Journey Line -->
-            <svg class="journey-flow-svg" viewBox="0 0 1000 48" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="laserGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="rgba(56, 189, 248, 0)" />
-                  <stop offset="40%" stop-color="rgba(56, 189, 248, 0.7)" />
-                  <stop offset="100%" stop-color="#38bdf8" />
-                </linearGradient>
-                <linearGradient id="laserGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#38bdf8" />
-                  <stop offset="50%" stop-color="#60a5fa" />
-                  <stop offset="100%" stop-color="#facc15" />
-                </linearGradient>
-                <filter id="laserGlowCyan" x="-20%" y="-40%" width="140%" height="180%">
-                  <feGaussianBlur stdDeviation="3" result="blur" />
-                  <feMerge>
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-                <filter id="laserGlowGold" x="-20%" y="-40%" width="140%" height="180%">
-                  <feGaussianBlur stdDeviation="3.5" result="blur" />
-                  <feMerge>
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-              </defs>
-
-              <!-- Rail Track Background -->
-              <path class="flow-rail-bg" d="M 40,24 L 333,24 L 833,24" />
-
-              <!-- Step 1: Laser line running into Hanoi (40 -> 333) -->
-              <path class="laser-path laser-path-to-hanoi" d="M 40,24 L 333,24" stroke="url(#laserGrad1)" filter="url(#laserGlowCyan)" />
-
-              <!-- Step 2: Laser line running from Hanoi to HCM (333 -> 833) -->
-              <path class="laser-path laser-path-to-hcm" d="M 333,24 L 833,24" stroke="url(#laserGrad2)" filter="url(#laserGlowGold)" />
-
-              <!-- Traveling light comet / pulse (continuous loop after arrival) -->
-              <circle class="laser-pulse-comet" r="4.5" />
-
-              <!-- Node 1: Origin dot -->
-              <circle class="flow-node-dot node-start-dot" cx="40" cy="24" r="3.5" />
-
-              <!-- Node 2: Hanoi Milestone Anchor -->
-              <circle class="flow-node-ring node-hanoi-ring" cx="333" cy="24" r="10" />
-              <circle class="flow-node-dot node-hanoi-dot" cx="333" cy="24" r="5" />
-
-              <!-- Node 3: HCM Milestone Anchor -->
-              <circle class="flow-node-ring node-hcm-ring" cx="833" cy="24" r="12" />
-              <circle class="flow-node-dot node-hcm-dot" cx="833" cy="24" r="6" />
-            </svg>
-
-            <!-- 2 Stage Header Badges superimposed on the track -->
-            <div class="journey-headers-grid">
-              
-              <!-- Header Hanoi (Spans col 1 & 2, centered at 33.3%) -->
-              <div class="journey-header-col header-hanoi-col">
-                <div class="journey-stage-group-header badge-hanoi">
-                  <span class="badge-dot dot-hanoi"></span>
-                  <span>CHẶNG HÀ NỘI · 17.09.2026</span>
-                </div>
+            <!-- Chặng 1: HÀ NỘI -->
+            <div class="track-stage stage-hn">
+              <div class="stage-pill pill-hanoi">
+                <span class="stage-glow-dot dot-cyan"></span>
+                <span class="stage-name">CHẶNG HÀ NỘI · 17.09.2026</span>
               </div>
+            </div>
 
-              <!-- Header HCM (Spans col 3, centered at 83.3%) -->
-              <div class="journey-header-col header-hcm-col">
-                <div class="journey-stage-group-header header-gold badge-hcm">
-                  <span class="badge-dot dot-gold"></span>
-                  <span>CHẶNG HCM · 23.09.2026</span>
-                </div>
+            <!-- Đường chạy 1: HN -> HCM -->
+            <div class="track-runner runner-hn-hcm">
+              <svg class="runner-svg" viewBox="0 0 240 28" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="laserGradHnHcm" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#38bdf8" />
+                    <stop offset="100%" stop-color="#60a5fa" />
+                  </linearGradient>
+                </defs>
+                <!-- Đường ray cố định -->
+                <line x1="4" y1="14" x2="224" y2="14" class="rail-line" />
+                <!-- Tia laser bắn lần đầu -->
+                <line x1="4" y1="14" x2="224" y2="14" class="laser-line laser-hn-hcm" stroke="url(#laserGradHnHcm)" />
+                <!-- Luồng sáng chạy liên tục từ HN sang HCM -->
+                <line x1="4" y1="14" x2="224" y2="14" class="stream-line stream-cyan" />
+                <!-- Mũi tên dẫn hướng sang HCM -->
+                <polygon points="222,8 234,14 222,20" class="runner-arrow arrow-cyan" />
+              </svg>
+            </div>
+
+            <!-- Chặng 2: HCM -->
+            <div class="track-stage stage-hcm">
+              <div class="stage-pill pill-hcm">
+                <span class="stage-glow-dot dot-blue"></span>
+                <span class="stage-name">CHẶNG HCM · 23.09.2026</span>
               </div>
+            </div>
 
+            <!-- Đường chạy 2: HCM -> ĐÀ NẴNG -->
+            <div class="track-runner runner-hcm-dn">
+              <svg class="runner-svg" viewBox="0 0 240 28" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="laserGradHcmDn" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#60a5fa" />
+                    <stop offset="100%" stop-color="#facc15" />
+                  </linearGradient>
+                </defs>
+                <!-- Đường ray cố định -->
+                <line x1="4" y1="14" x2="224" y2="14" class="rail-line" />
+                <!-- Tia laser bắn lần đầu -->
+                <line x1="4" y1="14" x2="224" y2="14" class="laser-line laser-hcm-dn" stroke="url(#laserGradHcmDn)" />
+                <!-- Luồng sáng chạy liên tục từ HCM sang Đà Nẵng -->
+                <line x1="4" y1="14" x2="224" y2="14" class="stream-line stream-gold" />
+                <!-- Mũi tên dẫn hướng sang Đà Nẵng -->
+                <polygon points="222,8 234,14 222,20" class="runner-arrow arrow-gold" />
+              </svg>
+            </div>
+
+            <!-- Chặng 3: ĐÀ NẴNG -->
+            <div class="track-stage stage-dn">
+              <div class="stage-pill pill-danang header-gold">
+                <span class="stage-glow-dot dot-gold"></span>
+                <span class="stage-name">CHẶNG ĐÀ NẴNG · 25.09.2026</span>
+              </div>
             </div>
 
           </div>
@@ -199,46 +387,46 @@
           <!-- 3-Column Grid: 3 cards have equal 1fr width & gap -->
           <div class="journey-cards-grid">
             
-            <!-- Card 1: 3.800+ LƯỢT ĐĂNG KÝ -->
-            <div class="exact-card exact-card-cyan card-hanoi-1">
+            <!-- Card 1: 4.500+ LƯỢT ĐĂNG KÝ -->
+            <div class="exact-card exact-card-cyan card-stat-1 card-hanoi-1">
               <div class="exact-card-icon icon-cyan">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1z" fill="#38bdf8"/>
                 </svg>
               </div>
-              <div class="exact-card-num">3.800+</div>
+              <div class="exact-card-num">4.500+</div>
               <div class="exact-card-lbl">LƯỢT ĐĂNG KÝ</div>
               <div class="exact-card-bar bar-cyan"></div>
             </div>
 
-            <!-- Card 2: 400+ LƯỢT LAN TỎA -->
-            <div class="exact-card exact-card-cyan card-hanoi-2">
+            <!-- Card 2: 50+ BÀI BÁO & ĐƠN VỊ TRUYỀN THÔNG ĐƯA TIN -->
+            <div class="exact-card exact-card-cyan card-stat-2 card-hanoi-2">
               <div class="exact-card-icon icon-cyan">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="18" cy="5" r="3" fill="#38bdf8"/>
-                  <circle cx="6" cy="12" r="3" fill="#38bdf8"/>
-                  <circle cx="18" cy="19" r="3" fill="#38bdf8"/>
-                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
-                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
-                </svg>
-              </div>
-              <div class="exact-card-num">400+</div>
-              <div class="exact-card-lbl">LƯỢT LAN TỎA</div>
-              <div class="exact-card-bar bar-cyan"></div>
-            </div>
-
-            <!-- Card 3: 30+ BÀI BÁO & ĐƠN VỊ TRUYỀN THÔNG ĐƯA TIN -->
-            <div class="exact-card exact-card-gold card-hcm-1">
-              <div class="exact-card-icon icon-gold">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
                   <path d="M18 14h-8"/>
                   <path d="M15 18h-5"/>
                   <path d="M10 6h8v4h-8V6Z"/>
                 </svg>
               </div>
-              <div class="exact-card-num">30+</div>
+              <div class="exact-card-num">50+</div>
               <div class="exact-card-lbl">BÀI BÁO &amp; ĐƠN VỊ TRUYỀN THÔNG<br>ĐƯA TIN</div>
+              <div class="exact-card-bar bar-cyan"></div>
+            </div>
+
+            <!-- Card 3: 500+ LƯỢT LAN TỎA -->
+            <div class="exact-card exact-card-gold card-stat-3 card-hcm-1 card-danang-1">
+              <div class="exact-card-icon icon-gold">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="18" cy="5" r="3" fill="#facc15"/>
+                  <circle cx="6" cy="12" r="3" fill="#facc15"/>
+                  <circle cx="18" cy="19" r="3" fill="#facc15"/>
+                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                </svg>
+              </div>
+              <div class="exact-card-num">500+</div>
+              <div class="exact-card-lbl">LƯỢT LAN TỎA</div>
               <div class="exact-card-bar bar-gold"></div>
             </div>
 
@@ -259,7 +447,7 @@
                 <div class="agenda-header-left">
                   <div class="agenda-title-row">
                     <span class="agenda-keynote-pill pill-cyan">Keynote 01</span>
-                    <h3 class="agenda-main-title">Intelligent Architect</h3>
+                    <h3 class="agenda-main-title">Intelligence Architecture</h3>
                   </div>
                   <p class="agenda-main-desc">Định hình kiến trúc AI cho vận hành doanh nghiệp</p>
                 </div>
@@ -273,7 +461,7 @@
                 <div class="agenda-block-body">
                   <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(7)">
                     <span class="subrow-num num-cyan">1</span>
-                    <span class="subrow-topic">Intelligent Architecture</span>
+                    <span class="subrow-topic">Intelligence Architecture</span>
                     <span class="subrow-speaker-chip">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                       <span>Ông Phạm Kim Hùng</span>
@@ -306,7 +494,7 @@
                     <span class="subrow-topic">Sales &amp; Marketing OS</span>
                     <span class="subrow-speaker-chip">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                      <span>Ông Trần Tuấn Anh Nghĩa + Ông Hoàng Thanh Nguyện</span>
+                      <span>Ông Hoàng Thanh Nguyện + Ông Trần Tuấn Anh Nghĩa</span>
                     </span>
                   </div>
                   <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(10)">
@@ -352,7 +540,7 @@
                     <span class="subrow-topic">AI Device</span>
                     <span class="subrow-speaker-chip chip-gold">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                      <span>Bà Hà Việt Phương + Bà Nguyễn Kim Cúc</span>
+                      <span>Bà Hà Việt Phương &amp; Ông Trương Bạch Dương</span>
                     </span>
                   </div>
                 </div>
@@ -377,7 +565,7 @@
               </div>
               <div class="agenda-block-body-wrapper">
                 <div class="agenda-block-body">
-                  <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(17)">
+                  <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(16)">
                     <span class="subrow-num num-purple">4.1</span>
                     <span class="subrow-topic">AI Model Research Project</span>
                     <span class="subrow-speaker-chip chip-purple">
@@ -385,7 +573,7 @@
                       <span>TS. Triệu Hải Long + Ông Hoàng Thanh Nguyện</span>
                     </span>
                   </div>
-                  <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(9)">
+                  <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(11)">
                     <span class="subrow-num num-purple">4.2</span>
                     <span class="subrow-topic">Agent Architecture</span>
                     <span class="subrow-speaker-chip chip-purple">
@@ -415,13 +603,9 @@
               </div>
               <div class="agenda-block-body-wrapper">
                 <div class="agenda-block-body">
-                  <div class="agenda-subrow" onclick="event.stopPropagation(); app.goToSlide(1)">
+                  <div class="agenda-subrow" style="cursor: default;">
                     <span class="subrow-num num-emerald">5</span>
                     <span class="subrow-topic">Launching Timeline &amp; Go-live</span>
-                    <span class="subrow-speaker-chip chip-emerald">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                      <span>Bà Phùng Thị Hải Hà</span>
-                    </span>
                   </div>
                 </div>
               </div>
@@ -432,13 +616,13 @@
       </section>
 
       <!-- SLIDE 6: KEYNOTE 1 INTRO -->
-      <section class="slide" data-slide-index="6" data-title="Keynote 01: Intelligent Architect">
+      <section class="slide" data-slide-index="6" data-title="Keynote 01: Intelligence Architecture">
         <div class="keynote-intro-box">
           <div class="badge-pill keynote-badge animate-in delay-1">
             <span class="badge-dot"></span>
             KEYNOTE 01
           </div>
-          <h1 class="keynote-intro-title animate-in delay-2">Intelligent Architect</h1>
+          <h1 class="keynote-intro-title animate-in delay-2">Intelligence Architecture</h1>
           <p class="keynote-intro-desc animate-in delay-3">Định hình kiến trúc AI cho vận hành doanh nghiệp</p>
         </div>
       </section>
@@ -478,24 +662,23 @@
         </div>
       </section>
 
-      <!-- SLIDE 9: KEYNOTE 2 DIỄN GIẢ 1: ÔNG TRẦN TUẤN ANH NGHĨA -->
-      <section class="slide" data-slide-index="9" data-title="Diễn giả Trần Tuấn Anh Nghĩa">
+      <!-- SLIDE 9: KEYNOTE 2 DIỄN GIẢ 1: ÔNG HOÀNG THANH NGUYỆN -->
+      <section class="slide" data-slide-index="9" data-title="Diễn giả Hoàng Thanh Nguyện">
         <div class="speaker-single-layout">
           <div class="speaker-single-content animate-in delay-1">
             <div class="badge-pill keynote-badge" style="margin-bottom: 0.5rem;">DIỄN GIẢ · KEYNOTE 02</div>
-            <h2 class="speaker-name">Ông Trần Tuấn Anh Nghĩa</h2>
-            <p class="speaker-position">Phó Tổng Giám đốc Base.vn</p>
-            <div class="speaker-track-tag" style="width: fit-content; margin-top: 0.2rem; margin-bottom: 0.6rem;">Sales &amp; Marketing OS · Work OS</div>
+            <h2 class="speaker-name">Ông Hoàng Thanh Nguyện</h2>
+            <p class="speaker-position">Giám đốc Triển khai chuyển đổi số Base.vn</p>
+            <div class="speaker-track-tag" style="width: fit-content; margin-top: 0.2rem; margin-bottom: 0.6rem;">Sales &amp; Marketing OS</div>
             <ul class="speaker-bio-list">
-              <li>10+ năm kinh nghiệm Sales B2B trong lĩnh vực Công nghệ, dẫn dắt tăng trưởng hai chữ số qua nhiều năm</li>
-              <li>Phụ trách 1000+ dự án triển khai cho khách hàng lớn: SIP Corp, Vòng Xanh, Soc&amp;Brothers, HimlamLand, Thiên Nam Hòa, Long Beach Pearl,...</li>
-              <li>Top 13 FPT Under 35 (2023)</li>
-              <li>Thạc sĩ ngành Quản trị Đổi mới và Sáng tạo tại Đại học Bournemouth, Anh Quốc</li>
+              <li>8+ năm kinh nghiệm đồng hành cùng 600+ doanh nghiệp trong hành trình chuyển đổi số từ sản xuất, bán lẻ đến FDI &amp; khối công</li>
+              <li>Trực tiếp triển khai bài toán quản trị &amp; vận hành quy mô lớn: AMECC, Nhậu Tự Do, Traphaco, Dragon Group, Xi măng Xuân Thành, VTVcab...</li>
+              <li>Thám hoa Trạng FPT 2023</li>
             </ul>
           </div>
           <div class="speaker-single-media animate-in delay-2">
             <div class="speaker-avatar-wrapper">
-              <img src="Ảnh diễn giả/ong-tran-tuan-anh-nghia.png" alt="Ông Trần Tuấn Anh Nghĩa" loading="lazy">
+              <img src="Ảnh diễn giả/ong-hoang-thanh-nguyen.png" alt="Ông Hoàng Thanh Nguyện" loading="lazy">
             </div>
           </div>
         </div>
@@ -524,23 +707,24 @@
         </div>
       </section>
 
-      <!-- SLIDE 11: KEYNOTE 2 DIỄN GIẢ 3: ÔNG HOÀNG THANH NGUYỆN -->
-      <section class="slide" data-slide-index="11" data-title="Diễn giả Hoàng Thanh Nguyện">
+      <!-- SLIDE 11: KEYNOTE 2 DIỄN GIẢ 3: ÔNG TRẦN TUẤN ANH NGHĨA -->
+      <section class="slide" data-slide-index="11" data-title="Diễn giả Trần Tuấn Anh Nghĩa">
         <div class="speaker-single-layout">
           <div class="speaker-single-content animate-in delay-1">
             <div class="badge-pill keynote-badge" style="margin-bottom: 0.5rem;">DIỄN GIẢ · KEYNOTE 02</div>
-            <h2 class="speaker-name">Ông Hoàng Thanh Nguyện</h2>
-            <p class="speaker-position">Giám đốc Triển khai chuyển đổi số Base.vn</p>
-            <div class="speaker-track-tag" style="width: fit-content; margin-top: 0.2rem; margin-bottom: 0.6rem;">Sales &amp; Marketing OS</div>
+            <h2 class="speaker-name">Ông Trần Tuấn Anh Nghĩa</h2>
+            <p class="speaker-position">Phó Tổng Giám đốc Base.vn</p>
+            <div class="speaker-track-tag" style="width: fit-content; margin-top: 0.2rem; margin-bottom: 0.6rem;">Sales &amp; Marketing OS · Work OS</div>
             <ul class="speaker-bio-list">
-              <li>8+ năm kinh nghiệm đồng hành cùng 600+ doanh nghiệp trong hành trình chuyển đổi số từ sản xuất, bán lẻ đến FDI &amp; khối công</li>
-              <li>Trực tiếp triển khai bài toán quản trị &amp; vận hành quy mô lớn: AMECC, Nhậu Tự Do, Traphaco, Dragon Group, Xi măng Xuân Thành, VTVcab...</li>
-              <li>Thám hoa Trạng FPT 2023</li>
+              <li>10+ năm kinh nghiệm Sales B2B trong lĩnh vực Công nghệ, dẫn dắt tăng trưởng hai chữ số qua nhiều năm</li>
+              <li>Phụ trách 1000+ dự án triển khai cho khách hàng lớn: SIP Corp, Vòng Xanh, Soc&amp;Brothers, HimlamLand, Thiên Nam Hòa, Long Beach Pearl,...</li>
+              <li>Top 13 FPT Under 35 (2023)</li>
+              <li>Thạc sĩ ngành Quản trị Đổi mới và Sáng tạo tại Đại học Bournemouth, Anh Quốc</li>
             </ul>
           </div>
           <div class="speaker-single-media animate-in delay-2">
             <div class="speaker-avatar-wrapper">
-              <img src="Ảnh diễn giả/ong-hoang-thanh-nguyen.png" alt="Ông Hoàng Thanh Nguyện" loading="lazy">
+              <img src="Ảnh diễn giả/ong-tran-tuan-anh-nghia.png" alt="Ông Trần Tuấn Anh Nghĩa" loading="lazy">
             </div>
           </div>
         </div>
@@ -581,54 +765,51 @@
         </div>
       </section>
 
-      <!-- SLIDE 14: KEYNOTE 3 DIỄN GIẢ 1: BÀ HÀ VIỆT PHƯƠNG -->
-      <section class="slide" data-slide-index="14" data-title="Diễn giả Hà Việt Phương">
-        <div class="speaker-single-layout">
-          <div class="speaker-single-content animate-in delay-1">
-            <div class="badge-pill keynote-badge" style="margin-bottom: 0.5rem;">DIỄN GIẢ · KEYNOTE 03</div>
-            <h2 class="speaker-name">Bà Hà Việt Phương</h2>
-            <p class="speaker-position">Phó Tổng Giám đốc Base.vn</p>
-            <div class="speaker-track-tag" style="width: fit-content; margin-top: 0.2rem; margin-bottom: 0.6rem;">AI Device · Tự động hóa vận hành</div>
-            <ul class="speaker-bio-list">
-              <li>Đồng sáng lập Base.vn, 10+ năm kinh nghiệm quản trị thực chiến trong lĩnh vực Công nghệ/SaaS</li>
-              <li>Chuyên gia tài chính doanh nghiệp &amp; tự động hóa vận hành cho startup và tập đoàn quy mô lớn</li>
-              <li>Xây dựng và quản trị hệ thống pháp lý, tài chính cho quy mô lớn, thúc đẩy tăng trưởng bền vững</li>
-              <li>Góp phần đưa doanh nghiệp từ $0 lên $10M ARR, phục vụ ~12.000 khách hàng doanh nghiệp và duy trì NRR cao</li>
-            </ul>
-          </div>
-          <div class="speaker-single-media animate-in delay-2">
-            <div class="speaker-avatar-wrapper">
-              <img src="Ảnh diễn giả/ba-ha-viet-phuong.png" alt="Bà Hà Việt Phương" loading="lazy">
+      <!-- SLIDE 14: KEYNOTE 3 DIỄN GIẢ: BÀ HÀ VIỆT PHƯƠNG & ÔNG TRƯƠNG BẠCH DƯƠNG -->
+      <section class="slide slide-dual-speakers" data-slide-index="14" data-title="Diễn giả: Hà Việt Phương &amp; Trương Bạch Dương">
+        <div class="speakers-dual-wrapper">
+          <div class="badge-pill keynote-badge animate-in delay-1" style="margin-bottom: 1.1rem;">DIỄN GIẢ · KEYNOTE 03</div>
+          <div class="speakers-dual-grid animate-in delay-2">
+            <!-- Card 1: Bà Hà Việt Phương -->
+            <div class="speaker-dual-card">
+              <div class="speaker-dual-avatar-box">
+                <img src="Ảnh diễn giả/ba-ha-viet-phuong.png" alt="Bà Hà Việt Phương" loading="lazy">
+              </div>
+              <div class="speaker-dual-info">
+                <h2 class="speaker-dual-name">Bà Hà Việt Phương</h2>
+                <p class="speaker-dual-pos">Phó Tổng Giám đốc Base.vn</p>
+                <div class="speaker-track-tag" style="width: fit-content; margin-top: 0.15rem; margin-bottom: 0.45rem; font-size: 0.8rem; padding: 3px 10px;">AI Device · Tự động hóa vận hành</div>
+                <ul class="speaker-dual-bullets">
+                  <li>Đồng sáng lập Base.vn, 10+ năm kinh nghiệm quản trị thực chiến trong lĩnh vực Công nghệ/SaaS</li>
+                  <li>Chuyên gia tài chính doanh nghiệp &amp; tự động hóa vận hành cho startup và tập đoàn quy mô lớn</li>
+                  <li>Xây dựng và quản trị hệ thống pháp lý, tài chính cho quy mô lớn, thúc đẩy tăng trưởng bền vững</li>
+                  <li>Góp phần đưa doanh nghiệp từ $0 lên $10M ARR, phục vụ ~12.000 khách hàng doanh nghiệp và duy trì NRR cao</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Card 2: Ông Trương Bạch Dương -->
+            <div class="speaker-dual-card">
+              <div class="speaker-dual-avatar-box">
+                <img src="Ảnh diễn giả/ong-truong-bach-duong.png" alt="Ông Trương Bạch Dương" loading="lazy">
+              </div>
+              <div class="speaker-dual-info">
+                <h2 class="speaker-dual-name">Ông Trương Bạch Dương</h2>
+                <p class="speaker-dual-pos">Giám đốc Tư vấn Chuyển đổi số Base.vn khu vực Miền Trung</p>
+                <div class="speaker-track-tag" style="width: fit-content; margin-top: 0.15rem; margin-bottom: 0.45rem; font-size: 0.8rem; padding: 3px 10px;">AI Device · Tư vấn chuyển đổi số</div>
+                <ul class="speaker-dual-bullets">
+                  <li>Trực tiếp dẫn dắt và triển khai các dự án chuyển đổi số cho doanh nghiệp trong và ngoài nước.</li>
+                  <li>Đại diện Việt Nam tham gia Chương trình Phát triển Nhân tài Công nghệ Samsung Innovation.</li>
+                  <li>Đồng hành cùng nhiều doanh nghiệp tiêu biểu như Medipharco, Nhà ga Quốc tế Đà Nẵng (AHT), JCI Đà Nẵng, OYO, KMS và UAC (Úc) trong hành trình số hóa và tối ưu vận hành.</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SLIDE 15: KEYNOTE 3 DIỄN GIẢ 2: BÀ NGUYỄN KIM CÚC -->
-      <section class="slide" data-slide-index="15" data-title="Diễn giả Nguyễn Kim Cúc">
-        <div class="speaker-single-layout">
-          <div class="speaker-single-content animate-in delay-1">
-            <div class="badge-pill keynote-badge" style="margin-bottom: 0.5rem;">DIỄN GIẢ · KEYNOTE 03</div>
-            <h2 class="speaker-name">Bà Nguyễn Kim Cúc</h2>
-            <p class="speaker-position">Giám đốc Tư vấn chuyển đổi số Base.vn</p>
-            <div class="speaker-track-tag" style="width: fit-content; margin-top: 0.2rem; margin-bottom: 0.6rem;">AI Device · Tư vấn chuyển đổi số</div>
-            <ul class="speaker-bio-list">
-              <li>Người đặt nền móng cho Base.vn tại thị trường miền Nam, 10+ năm kinh nghiệm Sales B2B trong lĩnh vực công nghệ</li>
-              <li>Đồng hành cùng +500 doanh nghiệp lớn: Vietjet Air, Long Châu &amp; FPT Shop (FPT Retail), GS25, Sovico, Hoa Lâm, Tân Cảng Sài Gòn, Tập đoàn Công nghiệp Cao Su Việt Nam...</li>
-              <li>Chuyên gia tư vấn chiến lược ứng dụng công nghệ và triển khai thiết bị AI trong vận hành chuỗi &amp; doanh nghiệp lớn</li>
-              <li>Top 13 FPT Under 35 (2026)</li>
-            </ul>
-          </div>
-          <div class="speaker-single-media animate-in delay-2">
-            <div class="speaker-avatar-wrapper">
-              <img src="Ảnh diễn giả/ba-nguyen-kim-cuc.png" alt="Bà Nguyễn Kim Cúc" loading="lazy">
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SLIDE 16: KEYNOTE 4 INTRO -->
-      <section class="slide" data-slide-index="16" data-title="Keynote 04: Agent Architecture &amp; AI Model Research Project">
+      <!-- SLIDE 15: KEYNOTE 4 INTRO -->
+      <section class="slide" data-slide-index="15" data-title="Keynote 04: Agent Architecture &amp; AI Model Research Project">
         <div class="keynote-intro-box">
           <div class="badge-pill keynote-badge animate-in delay-1">
             <span class="badge-dot"></span>
@@ -639,8 +820,8 @@
         </div>
       </section>
 
-      <!-- SLIDE 17: KEYNOTE 4 DIỄN GIẢ: TS TRIỆU HẢI LONG -->
-      <section class="slide" data-slide-index="17" data-title="Diễn giả Triệu Hải Long">
+      <!-- SLIDE 16: KEYNOTE 4 DIỄN GIẢ: TS TRIỆU HẢI LONG -->
+      <section class="slide" data-slide-index="16" data-title="Diễn giả Triệu Hải Long">
         <div class="speaker-single-layout">
           <div class="speaker-single-content animate-in delay-1">
             <div class="badge-pill keynote-badge" style="margin-bottom: 0.5rem;">DIỄN GIẢ · KEYNOTE 04</div>
